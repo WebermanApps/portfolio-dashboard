@@ -1,5 +1,5 @@
 {
- "updated": "Oct 13, 2026, 5:44 PM ICT",
+ "updated": "Oct 13, 2026, 6:02 PM ICT",
  "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
  "lanes": [
   {
@@ -70,12 +70,14 @@
   "Portfolio: review the allocation suggestion"
  ],
  "recent": [
+  "Pull-down-to-refresh on every Portfolio page",
+  "Warnings and Key News collapsed into one-line dropdowns",
+  "Apps Home link added top-left",
   "Portfolio and Spending pages live behind the password",
   "Tiles open the unlock screen with one tap",
   "Prices refreshed for tonight's showing",
   "Renamed from Folio to Portfolio; now owns all financials, including taxes",
-  "Finance Review app built (private repo)",
-  "Tax research pack drafted for CPA review"
+  "Finance Review app built (private repo)"
  ],
  "routines": [
   {
@@ -107,7 +109,7 @@
   }
  ],
  "report": {
-  "title": "Morning Report",
+  "title": "Evening Report \u00b7 Oct 13, 2026",
   "morning": [
    "Portfolio: Prices refreshed this morning; Portfolio and Spending pages are live behind the password and ready for tonight",
    "Portfolio: Allocation still waiting on your review of the target mix draft",
@@ -117,12 +119,13 @@
    "Cards: Due-date alerts running daily; card points now belong to the Miles agent"
   ],
   "evening": [
-   "Portfolio: Prices refreshed this morning; Portfolio and Spending pages are live behind the password and ready for tonight",
-   "Portfolio: Allocation still waiting on your review of the target mix draft",
-   "Spending: Work and personal split added; the latest business card statement is not on file yet",
-   "Taxes: Waiting on the CPA's reply to your latest email; next step is yours once it lands",
-   "Rentals: October rent cross-check done; equity agreement questions still need your answers",
-   "Cards: Due-date alerts running daily; card points now belong to the Miles agent"
+   "Today: Folio became Portfolio and now owns all financials, including taxes",
+   "Today: Command center went live with six tiles; Portfolio and Spending open behind the password, the other four still say Setting Up",
+   "Today: Big-screen sizing, collapsed warning dropdowns, an Apps Home link and pull-down-to-refresh added across the dashboard and Finance Review",
+   "Today: Prices refreshed for tonight's showing; allocation still waits on your review of the target mix draft",
+   "Taxes: Still waiting on the CPA's reply; nothing new came in today",
+   "Tomorrow: Morning Report goes up before 5 AM, the card due check runs at 7:58 AM and the 200-Day Watchlist scan at 8:27 AM",
+   "Tomorrow: No cards on file are due; the four Waiting on Max items below still need your answers"
   ]
  }
 }
