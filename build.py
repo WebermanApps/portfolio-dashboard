@@ -20,8 +20,21 @@ lanes=''.join(tile(l) for l in d['lanes'])
 h=datetime.datetime.now().hour
 rt=d.get('report',{}).get('title') or ('Morning Report' if h<12 else 'Evening Report')
 RI=d.get('report',{}).get('morning' if h<12 else 'evening',[])
-rep=f'<details class="alerts report"><summary><span class="eyebrow">{rt}</span> <span class="tag">{len(RI)} Updates</span></summary><div class="ai"><ul>'+''.join(f'<li>{e(x)}</li>' for x in RI)+'</ul></div></details>'
-opn=''.join(f'<li><span>{e(o["t"])}</span>{pill(o["s"])}</li>' for o in d['open'])
+TI={'Portfolio':('s/portfolio.html','chart'),'Spending':('s/spending.html','receipt'),'Finance Review':('https://github.com/WebermanApps/finance-review','doc')}
+def tileurl(x):
+    for k,(u,i) in TI.items():
+        if x.split(':',1)[1].strip().lower().startswith(k.lower()+' ') or k.lower() in x.lower()[:40]: return k,(u+'?v='+V if u.startswith('s/') else u),i
+    return None
+if rt.startswith('Fresh Start'):
+    rdy=[x for x in RI if x.lower().startswith('ready:')]; wt=[x.split(':',1)[1].strip() for x in RI if x.lower().startswith('waiting')]
+    tl=''
+    for x in rdy[:3]:
+        m=tileurl(x)
+        if m: tl+=f'<a class="fst-tile mw-hover" href="{e(m[1])}">{ic(m[2])}<b>{e(m[0])}</b><span>Ready now</span></a>'
+    rep=f'<section class="fs report"><h2 class="fst">{e(rt)}</h2><div class="fst-tiles">{tl}</div><details><summary><span class="tag w">{len(wt)} Waiting</span> Waiting On You</summary><ul>'+''.join(f'<li>{e(x)}</li>' for x in wt)+'</ul></details></section>'
+else:
+    rep=f'<details class="alerts report"><summary><span class="eyebrow">{e(rt)}</span> <span class="tag">{len(RI)} Updates</span></summary><div class="ai"><ol class="ev">'+''.join(f'<li>{e(x)}</li>' for x in RI)+'</ol></div></details>'
+opn=''.join(f'<li>{ic("clock")}<span>{e(o["t"])}</span>{pill(o["s"])}</li>' for o in d['open'])
 dec=''.join(f'<li><span>{e(x)}</span>{pill("Waiting on Max")}</li>' for x in d['decisions'])
 rec=''.join(f'<li>{e(x)}</li>' for x in d['recent'])
 rou=''.join(f'<li>{ic("clock")}<span><b>{e(r["n"])}</b><br><small>{e(r["w"])}</small></span></li>' for r in d['routines'])

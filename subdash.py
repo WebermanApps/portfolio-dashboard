@@ -109,7 +109,7 @@ def render():
     tpl=open(HERE+'/sub_template.html').read(); js=open(HERE+'/sub.js').read(); lib=open(F+'/reports/roth/vendor/lightweight-charts.standalone.production.js').read()
     out={}
     for slug,title in PAGES:
-        h=tpl.replace('/*TITLE*/',title).replace('/*FONTS*/',fonts).replace('/*TOKENS*/',open(HERE+'/brand-tokens.css').read()).replace('/*PAGE*/',slug)
+        h=tpl.replace('/*TITLE*/',title).replace('/*FONTS*/',fonts).replace('/*TOKENS*/',open(HERE+'/brand-tokens.css').read()).replace('/*PAGE*/',slug).replace(f'href="../s/{slug}.html">',f'href="../s/{slug}.html" class="on" aria-current="page">')
         h=h.replace('/*LIB*/',lib if slug=='portfolio' else '').replace('/*JS*/',js).replace('/*DATA*/','const D='+json.dumps({k:D[k] for k in PICK[slug]})+';')
         out[slug]=h
     return out
@@ -123,7 +123,7 @@ def encrypt_all(pages,pw,dest,only=None):
     for slug,title in PAGES:
         if only and slug not in only: continue
         iv=os.urandom(12); ct=base64.b64encode(iv+AESGCM(key).encrypt(iv,pages[slug].encode(),None)).decode()
-        open(f'{dest}/{slug}.html','w').write(lock.replace('{{TITLE}}',title).replace('{{SALT}}',s).replace('{{CT}}',ct))
+        open(f'{dest}/{slug}.html','w').write(lock.replace(f'href="../s/{slug}.html">',f'href="../s/{slug}.html" class="on" aria-current="page">').replace('{{TITLE}}',title).replace('{{SALT}}',s).replace('{{CT}}',ct))
 def build():
     pages=render(); os.makedirs(PRIV+'/plain',exist_ok=True)
     for k,v in pages.items(): open(f'{PRIV}/plain/{k}.html','w').write(v)
