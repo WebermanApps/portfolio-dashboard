@@ -1,5 +1,5 @@
 {
- "updated": "Oct 13, 2026, 6:02 PM ICT",
+ "updated": "Oct 13, 2026, 7:23 PM ICT",
  "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
  "lanes": [
   {
@@ -109,23 +109,24 @@
   }
  ],
  "report": {
-  "title": "Evening Report \u00b7 Oct 13, 2026",
+  "title": "Fresh Start",
   "morning": [
-   "Portfolio: Prices refreshed this morning; Portfolio and Spending pages are live behind the password and ready for tonight",
-   "Portfolio: Allocation still waiting on your review of the target mix draft",
-   "Spending: Work and personal split added; the latest business card statement is not on file yet",
-   "Taxes: Waiting on the CPA's reply to your latest email; next step is yours once it lands",
-   "Rentals: October rent cross-check done; equity agreement questions still need your answers",
-   "Cards: Due-date alerts running daily; card points now belong to the Miles agent"
+   "Ready: Portfolio page refreshed with latest prices, allocation vs target, moving averages and key news",
+   "Ready: Spending page with monthly totals, categories, top merchants and work vs personal",
+   "Ready: Finance Review app rebuilt with the same data",
+   "Waiting on you: Cards, confirm the Amex Delta payment due today posted",
+   "Waiting on you: Taxes, reply to the CPA once their answer lands",
+   "Waiting on you: Rentals, answer the equity agreement questions",
+   "Waiting on you: Portfolio, review the target mix draft and upload cost-basis exports"
   ],
   "evening": [
-   "Today: Folio became Portfolio and now owns all financials, including taxes",
-   "Today: Command center went live with six tiles; Portfolio and Spending open behind the password, the other four still say Setting Up",
-   "Today: Big-screen sizing, collapsed warning dropdowns, an Apps Home link and pull-down-to-refresh added across the dashboard and Finance Review",
-   "Today: Prices refreshed for tonight's showing; allocation still waits on your review of the target mix draft",
-   "Taxes: Still waiting on the CPA's reply; nothing new came in today",
-   "Tomorrow: Morning Report goes up before 5 AM, the card due check runs at 7:58 AM and the 200-Day Watchlist scan at 8:27 AM",
-   "Tomorrow: No cards on file are due; the four Waiting on Max items below still need your answers"
+   "Ready: Portfolio page refreshed with latest prices, allocation vs target, moving averages and key news",
+   "Ready: Spending page with monthly totals, categories, top merchants and work vs personal",
+   "Ready: Finance Review app rebuilt with the same data",
+   "Waiting on you: Cards, confirm the Amex Delta payment due today posted",
+   "Waiting on you: Taxes, reply to the CPA once their answer lands",
+   "Waiting on you: Rentals, answer the equity agreement questions",
+   "Waiting on you: Portfolio, review the target mix draft and upload cost-basis exports"
   ]
  }
 }
