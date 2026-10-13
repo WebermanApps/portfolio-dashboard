@@ -1,5 +1,5 @@
 {
- "updated": "Oct 13, 2026, 11:26 PM ICT",
+ "updated": "Oct 13, 2026, 11:39 PM ICT",
  "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
  "lanes": [
   {
@@ -64,20 +64,21 @@
   }
  ],
  "decisions": [
+  "Cards: confirm the Amex Delta payment posted",
   "Taxes: answer the open CPA questions",
   "Rentals: answer the equity agreement questions",
   "Upload fresh portfolio cost-basis exports",
   "Portfolio: review the allocation suggestion"
  ],
  "recent": [
+  "Layout picks applied: one-line report, decisions under it, compact rows",
+  "My Apps row moved to the top",
+  "Dashboard style picks applied (tabs, color band, action tiles)",
   "Pull-down-to-refresh on every Portfolio page",
   "Warnings and Key News collapsed into one-line dropdowns",
   "Apps Home link added top-left",
   "Portfolio and Spending pages live behind the password",
-  "Tiles open the unlock screen with one tap",
-  "Prices refreshed for tonight's showing",
-  "Renamed from Folio to Portfolio; now owns all financials, including taxes",
-  "Finance Review app built (private repo)"
+  "Renamed from Folio to Portfolio; now owns all financials, including taxes"
  ],
  "routines": [
   {
@@ -109,24 +110,22 @@
   }
  ],
  "report": {
-  "title": "Fresh Start",
+  "title": "Evening Report",
   "morning": [
-   "Ready: Portfolio page refreshed with latest prices, allocation vs target, moving averages and key news",
-   "Ready: Spending page with monthly totals, categories, top merchants and work vs personal",
-   "Ready: Finance Review app rebuilt with the same data",
-   "Waiting on you: Cards, confirm the Amex Delta payment due today posted",
-   "Waiting on you: Taxes, reply to the CPA once their answer lands",
-   "Waiting on you: Rentals, answer the equity agreement questions",
-   "Waiting on you: Portfolio, review the target mix draft and upload cost-basis exports"
+   "Portfolio: prices refreshed this evening; Portfolio and Spending pages live behind the password",
+   "Spending: monthly totals, categories, merchants and work vs personal up to date through September",
+   "Dashboard: Max's layout picks applied (one-line report, decisions under it, compact rows, See All)",
+   "Cards: Amex Delta was due today on autopay; confirm it posted",
+   "Taxes: still waiting on the CPA's reply",
+   "Tomorrow: Morning Report by 5:00, card due check 7:58, Roth and Kraken refresh"
   ],
   "evening": [
-   "Ready: Portfolio page refreshed with latest prices, allocation vs target, moving averages and key news",
-   "Ready: Spending page with monthly totals, categories, top merchants and work vs personal",
-   "Ready: Finance Review app rebuilt with the same data",
-   "Waiting on you: Cards, confirm the Amex Delta payment due today posted",
-   "Waiting on you: Taxes, reply to the CPA once their answer lands",
-   "Waiting on you: Rentals, answer the equity agreement questions",
-   "Waiting on you: Portfolio, review the target mix draft and upload cost-basis exports"
+   "Portfolio: prices refreshed this evening; Portfolio and Spending pages live behind the password",
+   "Spending: monthly totals, categories, merchants and work vs personal up to date through September",
+   "Dashboard: Max's layout picks applied (one-line report, decisions under it, compact rows, See All)",
+   "Cards: Amex Delta was due today on autopay; confirm it posted",
+   "Taxes: still waiting on the CPA's reply",
+   "Tomorrow: Morning Report by 5:00, card due check 7:58, Roth and Kraken refresh"
   ]
  }
 }

@@ -53,8 +53,15 @@ svg text{font-size:16px}.grid2>.card svg[viewBox="0 0 200 200"]{width:300px!impo
 .tabs{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;background:#fff;border-top:2px solid #05668D;padding-bottom:env(safe-area-inset-bottom)}.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:56px;font:600 11px Hind,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#525252;text-decoration:none;gap:2px}.tabs a svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}.tabs a.on{color:#05668D;box-shadow:inset 0 3px 0 #05668D}body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
 .home{letter-spacing:.2em!important;font-size:11px!important;font-weight:600;color:#05668D!important}
 @media(min-width:1600px){.tabs a{min-height:72px;font-size:15px}.tabs a svg{width:28px;height:28px}body{padding-bottom:84px}.home{font-size:15px!important}}
-</style><script src="../ptr.js" defer></script></head><body><div class="wrap">
-<header><div><a class="eb home" href="../" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Command Center</a><h1>/*TITLE*/</h1><div class="m" id="asof"></div></div>
+.mini{position:fixed;top:0;left:0;right:0;z-index:45;display:flex;align-items:center;gap:14px;padding:0 16px;min-height:48px;background:rgba(255,255,255,.97);border-bottom:1px solid #e5e5e5;transform:translateY(-100%);transition:transform .18s}.mini.on{transform:none}.mini a{display:inline-flex;align-items:center;min-height:44px;font:600 11px Hind,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#05668D;text-decoration:none}.mini b{font:700 20px Khand,sans-serif}.mini span{margin-left:auto;font-size:12px;color:#737373}
+@media(min-width:1600px){.mini{min-height:64px;padding:0 5vw}.mini b{font-size:30px}.mini a,.mini span{font-size:15px}}
+.s5more{display:inline-flex;align-items:center;min-height:44px;margin-top:6px;padding:0 14px;border:1px solid #e5e5e5;border-radius:999px;background:#fff;font:600 12px Hind,sans-serif;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;color:#171717}
+
+.card{margin-top:10px;padding:12px}.kpis{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:10px 0;padding-bottom:4px}.kpi{flex:1 0 150px;scroll-snap-align:start}
+.grid2{gap:0 10px}header{padding-bottom:8px}
+@media(min-width:1600px){.kpi{flex:1 0 220px}}
+</style><script src="../ptr.js" defer></script></head><body><div class="mini" aria-hidden="true"><a href="https://webermanapps.github.io/a-2sipntzsp385oxy3/" tabindex="-1">Apps Home</a><b>/*TITLE*/</b><span>Portfolio</span></div><div class="wrap">
+<header><div><a class="eb home" href="https://webermanapps.github.io/a-2sipntzsp385oxy3/" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px;margin-right:16px">Apps Home</a><a class="eb home" href="../" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">Command Center</a><h1>/*TITLE*/</h1><div class="m" id="asof"></div></div>
 <div class="acts"><button class="btn mw-hover" id="lock">Lock</button></div></header>
 <main id="main"></main>
 <div class="sharebar"><button class="btn mw-hover" id="share">Share</button></div>
@@ -64,4 +71,5 @@ svg text{font-size:16px}.grid2>.card svg[viewBox="0 0 200 200"]{width:300px!impo
 <script>/*DATA*/
 const PAGE='/*PAGE*/';
 /*JS*/
-</script></body></html>
+</script><script>(function(){var h=document.querySelector('header'),m=document.querySelector('.mini');if(!h||!m)return;new IntersectionObserver(function(e){m.classList.toggle('on',!e[0].isIntersecting)}).observe(h)})();
+function s5(root){(root||document).querySelectorAll('.s5').forEach(function(el){if(el.dataset.s5)return;el.dataset.s5=1;var rows=el.tagName=='TABLE'?[].slice.call(el.querySelectorAll('tr')).filter(function(r){return !r.querySelector('th')&&!r.classList.contains('tot')}):[].slice.call(el.children);if(rows.length<=5)return;rows.slice(5).forEach(function(r){r.hidden=true});var b=document.createElement('button');b.className='s5more mw-hover';b.type='button';b.setAttribute('aria-expanded','false');b.textContent='See All '+rows.length;b.onclick=function(){var o=b.getAttribute('aria-expanded')=='true';rows.slice(5).forEach(function(r){r.hidden=o});b.setAttribute('aria-expanded',String(!o));b.textContent=o?'See All '+rows.length:'Show Five'};(el.closest('.tw')||el).after(b)})}window.s5=s5;</script></body></html>
