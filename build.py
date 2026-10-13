@@ -12,8 +12,9 @@ ic=lambda k:f'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">{I[k]}</svg
 cls=lambda s:{'Done':'done','In Progress':'prog','Waiting on Max':'wait'}[s]
 pill=lambda s:f'<span class="pill {cls(s)}">{e(s)}</span>'
 def tile(l):
-    inner=f'{ic(l["icon"])}<div class="tb"><h3>{e(l["name"])}</h3><p>{e(l["note"])}</p><div class="tf">{pill(l["status"])}<span class="lk">{ic("lock")}{"Private, Tap To Open" if live else "Locked, Setting Up"}</span></div></div>'
-    return f'<a class="card tile mw-hover" href="s/{l["slug"]}.html">{inner}</a>' if live else f'<div class="card tile off" aria-disabled="true">{inner}</div>'
+    live_t=live and l['slug'] in subdash.LIVE
+    inner=f'{ic(l["icon"])}<div class="tb"><h3>{e(l["name"])}</h3><p>{e(l["note"])}</p><div class="tf">{pill(l["status"])}<span class="lk">{ic("lock")}{"Private, Tap To Open" if live_t else "Locked, Setting Up"}</span></div></div>'
+    return f'<a class="card tile mw-hover" href="s/{l["slug"]}.html">{inner}</a>' if live_t else f'<div class="card tile off" aria-disabled="true">{inner}</div>'
 lanes=''.join(tile(l) for l in d['lanes'])
 h=datetime.datetime.now().hour
 rt='Morning Report' if h<12 else 'Evening Report'
