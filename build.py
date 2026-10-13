@@ -18,7 +18,7 @@ def tile(l):
     return f'<a class="card tile mw-hover" href="s/{l["slug"]}.html?v={V}">{inner}</a>' if live_t else f'<div class="card tile off" aria-disabled="true">{inner}</div>'
 lanes=''.join(tile(l) for l in d['lanes'])
 h=datetime.datetime.now().hour
-rt='Morning Report' if h<12 else 'Evening Report'
+rt=d.get('report',{}).get('title') or ('Morning Report' if h<12 else 'Evening Report')
 rep=f'<div class="report"><span class="eyebrow">{rt}</span><ul>'+''.join(f'<li>{e(x)}</li>' for x in d.get('report',{}).get('morning' if h<12 else 'evening',[]))+'</ul></div>'
 opn=''.join(f'<li><span>{e(o["t"])}</span>{pill(o["s"])}</li>' for o in d['open'])
 dec=''.join(f'<li><span>{e(x)}</span>{pill("Waiting on Max")}</li>' for x in d['decisions'])

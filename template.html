@@ -53,7 +53,7 @@ footer{margin-top:40px;border-top:1px solid var(--mw-border);padding-top:16px;fo
 }
 </style></head><body><div class="wrap">
 <header><div><div class="eyebrow">Command Center</div><h1>Portfolio</h1><div class="upd">Updated {{UPDATED}}</div></div>
-<button class="btn mw-hover" id="share">{{SHARE}}Share</button></header>
+</header>
 {{REPORT}}<p class="status"><b>Status:</b> {{STATUS}}</p>
 <h2>Dashboards</h2><div class="grid">{{LANES}}</div>
 <div class="board">
@@ -61,7 +61,7 @@ footer{margin-top:40px;border-top:1px solid var(--mw-border);padding-top:16px;fo
 <div class="cols"><section><h2>Routines</h2><ul class="rou">{{ROU}}</ul></section><section><h2>Recent Work</h2><ul class="rec">{{REC}}</ul></section></div>
 </div>
 <h2>My Apps</h2><div class="grid">{{LNK}}</div>
-<footer>Built by Max Weberman</footer></div><div class="toast" id="t">Link Copied</div>
+<div style="display:flex;justify-content:center;margin-top:32px"><button class="btn mw-hover" id="share">{{SHARE}}Share</button></div><footer><a href="https://maxweberman.com" target="_blank" rel="noopener" style="color:inherit;display:inline-flex;align-items:center;min-height:44px">Built by Max Weberman</a></footer></div><div class="toast" id="t">Link Copied</div>
 <script>document.getElementById('share').onclick=async()=>{const u=location.href;try{if(navigator.share){await navigator.share({title:'Portfolio Command Center',url:u});return}}catch(e){return}try{await navigator.clipboard.writeText(u)}catch(e){}const t=document.getElementById('t');t.style.display='block';setTimeout(()=>t.style.display='none',1600)}</script>
 <script>/* cache-buster: if this copy is older than the live one, reload the fresh page */
 (function(){var me=document.querySelector('meta[name=build]').content;if('serviceWorker' in navigator&&navigator.serviceWorker.getRegistrations)navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(x){x.unregister()})});

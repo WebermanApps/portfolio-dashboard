@@ -1,19 +1,19 @@
 {
- "updated": "Oct 13, 2026, 2:53 PM ICT",
+ "updated": "Oct 13, 2026, 3:01 PM ICT",
  "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
  "lanes": [
   {
    "name": "Portfolio",
    "icon": "chart",
    "status": "In Progress",
-   "note": "Weekly review and 200-day watchlist running.",
+   "note": "Live: holdings, allocation, moving averages and key news.",
    "slug": "portfolio"
   },
   {
    "name": "Spending",
    "icon": "receipt",
    "status": "Done",
-   "note": "Ledgers and subscriptions review complete.",
+   "note": "Live: monthly totals, categories, merchants, work vs personal.",
    "slug": "spending"
   },
   {
@@ -70,11 +70,12 @@
   "Portfolio: review the allocation suggestion"
  ],
  "recent": [
+  "Portfolio and Spending pages live behind the password",
+  "Tiles open the unlock screen with one tap",
+  "Prices refreshed for tonight's showing",
   "Renamed from Folio to Portfolio; now owns all financials, including taxes",
   "Finance Review app built (private repo)",
-  "Tax research pack drafted for CPA review",
-  "Smart UpKeep model review sent to UpKeep",
-  "October rent cross-check complete"
+  "Tax research pack drafted for CPA review"
  ],
  "routines": [
   {
@@ -106,13 +107,22 @@
   }
  ],
  "report": {
+  "title": "Morning Report",
   "morning": [
-   "Portfolio dashboard now opens six private sub-dashboards from its tiles",
-   "Taxes still waiting on the CPA's reply"
+   "Portfolio: Prices refreshed this morning; Portfolio and Spending pages are live behind the password and ready for tonight",
+   "Portfolio: Allocation still waiting on your review of the target mix draft",
+   "Spending: Work and personal split added; the latest business card statement is not on file yet",
+   "Taxes: Waiting on the CPA's reply to your latest email; next step is yours once it lands",
+   "Rentals: October rent cross-check done; equity agreement questions still need your answers",
+   "Cards: Due-date alerts running daily; card points now belong to the Miles agent"
   ],
   "evening": [
-   "Portfolio dashboard now opens six private sub-dashboards from its tiles",
-   "Taxes still waiting on the CPA's reply"
+   "Portfolio: Prices refreshed this morning; Portfolio and Spending pages are live behind the password and ready for tonight",
+   "Portfolio: Allocation still waiting on your review of the target mix draft",
+   "Spending: Work and personal split added; the latest business card statement is not on file yet",
+   "Taxes: Waiting on the CPA's reply to your latest email; next step is yours once it lands",
+   "Rentals: October rent cross-check done; equity agreement questions still need your answers",
+   "Cards: Due-date alerts running daily; card points now belong to the Miles agent"
   ]
  }
 }

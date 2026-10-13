@@ -30,9 +30,9 @@ svg{display:block;max-width:100%;height:auto}
 .sheet{position:fixed;inset:0;background:rgba(10,10,10,.25);display:none;z-index:30;align-items:flex-end;justify-content:center}.sheet.on{display:flex}
 .sheet>div{background:#fff;max-width:720px;width:100%;max-height:84vh;overflow:auto;border-radius:1rem 1rem 0 0;padding:16px}
 footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase}
-.toast{position:fixed;left:50%;bottom:84px;transform:translateX(-50%);background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:8px;display:none;z-index:40}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:8px;display:none;z-index:40}
 .flag{border-left:3px solid var(--acc);padding:8px 12px;margin:8px 0;background:#fafafa}
-.wrap{padding-bottom:24px}.sharebar{position:sticky;bottom:0;display:flex;justify-content:center;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);border-top:1px solid var(--line);z-index:20}.sharebar .btn{min-width:200px}
+.wrap{padding-bottom:24px}.sharebar{display:flex;justify-content:center;margin-top:32px}.sharebar .btn{min-width:200px}
 .mw-hover:hover{transform:translateY(-1px)}
 .kpi.hero{border-color:#171717}.kpi.hero b{font-size:36px}
 .news{border-color:var(--acc);background:#C1502E0d}.news .flag{background:#fff}
@@ -42,8 +42,8 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-si
 <header><div><a class="eb" href="../" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">&larr; Portfolio Command Center</a><h1>/*TITLE*/</h1><div class="m" id="asof"></div></div>
 <div class="acts"><button class="btn mw-hover" id="lock">Lock</button></div></header>
 <main id="main"></main>
-<footer><a href="https://maxweberman.com" target="_blank" rel="noopener" style="color:inherit;display:inline-flex;align-items:center;min-height:44px">Built by Max Weberman</a></footer></div>
 <div class="sharebar"><button class="btn mw-hover" id="share">Share</button></div>
+<footer><a href="https://maxweberman.com" target="_blank" rel="noopener" style="color:inherit;display:inline-flex;align-items:center;min-height:44px">Built by Max Weberman</a></footer></div>
 <div class="toast" id="toast">Link Copied</div><div class="sheet" id="sheet" onclick="if(event.target===this)this.classList.remove('on')"><div id="sheetIn"></div></div>
 <script>/*LIB*/</script>
 <script>/*DATA*/
