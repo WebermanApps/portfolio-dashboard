@@ -38,6 +38,16 @@ footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-si
 .news{border-color:var(--acc);background:#C1502E0d}.news .flag{background:#fff}
 .mr{margin:10px 0}.mt{position:relative;height:12px;background:var(--soft);border-radius:6px;margin-top:4px}.mt i{display:block;height:100%;border-radius:6px}.mt em{position:absolute;top:-4px;width:2px;height:20px;background:#0a0a0a}
 .smat{font-size:15px;margin:6px 0 10px;padding:8px 12px;background:var(--soft);border-radius:.5rem}
+
+/* TV / big screen (>=1600px): 20px body, 90vw content, bigger tables and charts */
+@media(min-width:1600px){.wrap{max-width:90vw!important;padding:32px 0 56px}body{font-size:20px}
+h1{font-size:64px!important}h2{font-size:32px!important}h2:before{height:24px;width:8px}.eb,.m,.kpi small,.legend span,.chip,.btn,footer,.pill{font-size:17px!important}
+.kpi{padding:20px}.kpi b{font-size:44px}.kpi.hero b{font-size:56px}.smat,.flag{font-size:20px}
+table{font-size:19px}td,th{padding:16px 12px}th{font-size:15px!important}tr.ck td{height:60px}.card{padding:22px}.list li{font-size:19px}
+#chart{height:58vh!important}.chip{min-height:52px;padding:0 20px}.bar{height:10px}
+svg text{font-size:16px}.grid2>.card svg[viewBox="0 0 200 200"]{width:300px!important}}
+@media(min-width:3000px){body{font-size:26px}h1{font-size:84px!important}h2{font-size:42px!important}.eb,.m,.kpi small,.legend span,.chip,.btn,footer,.pill{font-size:22px!important}
+.kpi b{font-size:58px}.kpi.hero b{font-size:72px}table{font-size:25px}th{font-size:19px!important}td,th{padding:20px 14px}.smat,.flag{font-size:26px}.list li{font-size:25px}.grid2>.card svg[viewBox="0 0 200 200"]{width:420px!important}}
 </style></head><body><div class="wrap">
 <header><div><a class="eb" href="../" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">&larr; Portfolio Command Center</a><h1>/*TITLE*/</h1><div class="m" id="asof"></div></div>
 <div class="acts"><button class="btn mw-hover" id="lock">Lock</button></div></header>
