@@ -1,0 +1,102 @@
+{
+ "updated": "Oct 13, 2026, 12:36 PM ICT",
+ "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
+ "lanes": [
+  {
+   "name": "Portfolio",
+   "icon": "chart",
+   "status": "In Progress",
+   "note": "Weekly review and 200-day watchlist running."
+  },
+  {
+   "name": "Spending",
+   "icon": "receipt",
+   "status": "Done",
+   "note": "Ledgers and subscriptions review complete."
+  },
+  {
+   "name": "Cards And Bills",
+   "icon": "card",
+   "status": "In Progress",
+   "note": "Due-date alerts live; autopay watch open."
+  },
+  {
+   "name": "Taxes",
+   "icon": "doc",
+   "status": "Waiting on Max",
+   "note": "CPA packet sent; next step needs a reply from Max."
+  },
+  {
+   "name": "Rentals Finance",
+   "icon": "house",
+   "status": "Waiting on Max",
+   "note": "Equity agreement terms need Max's answers."
+  },
+  {
+   "name": "Smart UpKeep Model Checks",
+   "icon": "check",
+   "status": "Done",
+   "note": "Model review handed to UpKeep."
+  }
+ ],
+ "open": [
+  {
+   "t": "Verify research pack sources before CPA use",
+   "s": "In Progress"
+  },
+  {
+   "t": "Rental vault close-out",
+   "s": "In Progress"
+  },
+  {
+   "t": "Insurance documents square-away",
+   "s": "In Progress"
+  },
+  {
+   "t": "Identify incoming transfers",
+   "s": "In Progress"
+  }
+ ],
+ "decisions": [
+  "Taxes: answer the open CPA questions",
+  "Rentals: answer the equity agreement questions",
+  "Upload fresh portfolio cost-basis exports",
+  "Portfolio: review the allocation suggestion"
+ ],
+ "recent": [
+  "Renamed from Folio to Portfolio; now owns all financials, including taxes",
+  "Finance Review app built (private repo)",
+  "Tax research pack drafted for CPA review",
+  "Smart UpKeep model review sent to UpKeep",
+  "October rent cross-check complete"
+ ],
+ "routines": [
+  {
+   "n": "Card Due Alerts",
+   "w": "Daily, 7:58 AM ICT"
+  },
+  {
+   "n": "200-Day Watchlist Scan",
+   "w": "Tue to Sat, 8:27 AM ICT"
+  },
+  {
+   "n": "Portfolio Review",
+   "w": "Sundays"
+  },
+  {
+   "n": "Monthly Statements Review",
+   "w": "5th of each month"
+  },
+  {
+   "n": "Category And Cost-Basis Nudges",
+   "w": "Weekly"
+  }
+ ],
+ "links": [
+  {
+   "n": "Finance Review",
+   "u": "https://github.com/WebermanApps/finance-review",
+   "l": "Private, sign in to GitHub"
+  }
+ ]
+}

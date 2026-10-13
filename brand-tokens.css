@@ -1,0 +1,23 @@
+/* Max Weberman brand tokens, extracted from maxweberman.com (2026-10-10) */
+:root {
+  --mw-background: #ffffff;
+  --mw-foreground: #0a0a0a;   /* body text */
+  --mw-primary: #171717;      /* buttons, borders */
+  --mw-primary-foreground: #fafafa;
+  --mw-secondary: #f5f5f5;    /* muted surfaces */
+  --mw-accent: #f5f5f5;
+  --mw-muted-text: #737373;
+  --mw-border: #e5e5e5;
+  --mw-dark-surface: #0a0a0a; /* dark sections / footer */
+  --mw-font-heading: "Khand", sans-serif;          /* Bold */
+  --mw-font-body: "Hind", system-ui, sans-serif;   /* Regular */
+  --mw-radius: 0.625rem;      /* cards ~0.75rem; primary buttons square */
+  --mw-tracking-label: 0.1em; /* uppercase button/label tracking */
+}
+
+/* Hover motion (Max, Oct 10, 2026) */
+:root { --mw-ease: cubic-bezier(.2,.8,.2,1); --mw-dur: 180ms; }
+.mw-hover { transition: transform var(--mw-dur) var(--mw-ease), box-shadow var(--mw-dur) var(--mw-ease), background-color var(--mw-dur) var(--mw-ease); }
+.mw-hover:hover, .mw-hover:focus-visible { transform: translateY(-1px) scale(1.03); box-shadow: 0 6px 18px rgba(10,10,10,.12); }
+.mw-hover:active { transform: scale(.98); }
+@media (prefers-reduced-motion: reduce) { .mw-hover, .mw-hover:hover { transition: none; transform: none; } }
