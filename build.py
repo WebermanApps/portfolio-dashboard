@@ -39,14 +39,16 @@ dec=''.join(f'<li><span>{e(x)}</span>{pill("Waiting on Max")}</li>' for x in d['
 rec=''.join(f'<li>{e(x)}</li>' for x in d['recent'])
 rou=''.join(f'<li>{ic("clock")}<span><b>{e(r["n"])}</b><br><small>{e(r["w"])}</small></span></li>' for r in d['routines'])
 lnk=''.join(f'<a class="link mw-hover" href="{e(l["u"])}" target="_blank" rel="noopener">{ic("lock")}<span><b>{e(l["n"])}</b><br><small>{e(l["l"])}</small></span></a>' for l in d['links'])
+MY=[('Portfolio',f's/portfolio.html?v={V}','chart','Private'),('Spending',f's/spending.html?v={V}','receipt','Private'),('Finance Review','https://github.com/WebermanApps/finance-review','doc','Private Repo')]
+myapps=''.join(f'<a class="app mw-hover" href="{e(u)}">{ic(i)}<b>{e(n)}</b><small>{e(s)}</small></a>' for n,u,i,s in MY)
 page=open('template.html').read()
-for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V).items(): page=page.replace('{{'+k+'}}',v)
+for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers
 if re.search(r'\$\s?\d|\d[\d,]*\.\d{2}\b|\b(?!20[0-9]{2}\b)\d{4,}\b|\d+(\.\d+)?\s?%|\d+k\b',re.sub(r'<[^>]+>','',re.sub(r'(?s)<(style|script|svg).*?</\1>','',page))):
     sys.exit('PRIVACY GUARD: possible figure found; not publishing')
 open('index.html','w').write(page)
 if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles
     live=True; lanes=''.join(tile(l) for l in d['lanes']); p=open('template.html').read()
-    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share')).items(): p=p.replace('{{'+k+'}}',v)
+    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps).items(): p=p.replace('{{'+k+'}}',v)
     import shutil; open(subdash.PRIV+'/preview/index.html','w').write(p); shutil.copy('brand-tokens.css',subdash.PRIV+'/preview/')
 print('built',d['updated'],'| sub-dashboards:',state)
