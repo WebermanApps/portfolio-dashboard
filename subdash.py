@@ -32,7 +32,7 @@ def data():
         assert not re.search(r'\d{3}-?\d{2}-?\d{4}|\d{2}-\d{7}|\b(CP|LT)\s?\d+|Letter\s?\d+',x['t']+x['n'],re.I),'tax item has an ID or letter number'
     # Rent: property names only, never payer/tenant names
     now=dt.date.today().strftime('%Y-%m'); ms=[f'2026-{m:02d}' for m in range(1,13) if f'2026-{m:02d}'<=now]
-    exp={'Wickfield':{m:4300 for m in ms},'Mellow Wood':{m:3500 for m in ms if m>='2026-10'}}
+    RE=j(PRIV+'/inputs/rent-expected.json'); exp={p:{m:v['monthly'] for m in ms if m>=v['from']} for p,v in RE.items()}
     got={'Wickfield':{},'Mellow Wood':{}}
     for r in csv.DictReader(open(F+'/income/rent-deposits-2026.csv')):
         if r['ledger_category']!='rental_income': continue
