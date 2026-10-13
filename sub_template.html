@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="color-scheme" content="light only"><meta name="robots" content="noindex"><title>/*TITLE*/ | Portfolio</title>
+<style>/*FONTS*/
+/*TOKENS*/
+:root{--ink:#0a0a0a;--mute:#737373;--line:#e5e5e5;--soft:#f5f5f5;--gain:#0B6E4F;--loss:#A4161A;--acc:#0f766e}
+*{box-sizing:border-box}html,body{margin:0;background:#fff}body{color:var(--ink);font:16px/1.5 Hind,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Khand,sans-serif;font-weight:700;line-height:1.1;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:16px 16px 40px}
+header{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px}
+.eb{font:600 12px Hind;letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+h1{font-size:38px}h2{font-size:22px;margin:0 0 10px;display:flex;align-items:center;gap:8px}h2:before{content:"";width:6px;height:16px;background:var(--acc);border-radius:2px}
+.acts{display:flex;gap:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;min-width:44px;padding:0 14px;border:2px solid #171717;background:#fff;font:600 13px Hind;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;color:#171717;text-decoration:none;white-space:nowrap}
+.btn:hover{background:#171717;color:#fafafa}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:16px 0}
+.kpi{border:1px solid var(--line);border-radius:.75rem;padding:12px}.kpi b{display:block;font-family:Khand;font-size:28px;line-height:1.1}.kpi small{color:var(--mute);font-size:13px}
+.card{border:1px solid var(--line);border-radius:.75rem;padding:14px;margin-top:14px;min-width:0}
+.g{color:var(--gain)}.l{color:var(--loss)}.m{color:var(--mute);font-size:13px}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr);gap:0 14px}@media(min-width:900px){.grid2{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:14px}td,th{padding:10px 6px;border-bottom:1px solid var(--line);text-align:right}td:first-child,th:first-child{text-align:left}th{font:600 11px Hind;letter-spacing:.1em;text-transform:uppercase;color:#525252}
+tr.ck{cursor:pointer}tr.ck:hover{background:var(--soft)}tr.ck td{height:44px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}.chip{font:600 12px Hind;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:#fff;border-radius:999px;padding:0 14px;min-height:44px;min-width:44px;cursor:pointer;color:var(--ink)}.chip.on{border-color:var(--ink);background:var(--ink);color:#fff}
+svg{display:block;max-width:100%;height:auto}
+.pill{display:inline-block;font:600 11px Hind;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;white-space:nowrap;background:var(--soft);color:#404040}
+.p-done{background:#ecfdf5;color:#047857}.p-wait{background:#f5f5f5;color:#404040}.p-need{background:#fff7ed;color:#b45309}.p-bad{background:#fef2f2;color:#A4161A}
+.bar{height:8px;background:var(--soft);border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;background:#171717}
+.row{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.list{list-style:none;margin:0;padding:0}.list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--line);min-height:44px}.list li:first-child{border-top:0}
+#chart{height:380px;width:100%}@media(min-width:1600px){#chart{height:520px}.wrap{max-width:1600px}}@media(min-width:2200px){.wrap{max-width:2100px}h1{font-size:52px}#chart{height:640px}}
+.legend span{display:inline-flex;align-items:center;gap:6px;margin-right:12px;font-size:13px;color:#525252}.legend i{width:16px;height:3px;display:inline-block}
+.sheet{position:fixed;inset:0;background:rgba(10,10,10,.25);display:none;z-index:30;align-items:flex-end;justify-content:center}.sheet.on{display:flex}
+.sheet>div{background:#fff;max-width:720px;width:100%;max-height:84vh;overflow:auto;border-radius:1rem 1rem 0 0;padding:16px}
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;font-size:13px;color:var(--mute);letter-spacing:.1em;text-transform:uppercase}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:8px;display:none;z-index:40}
+.flag{border-left:3px solid var(--acc);padding:8px 12px;margin:8px 0;background:#fafafa}
+</style></head><body><div class="wrap">
+<header><div><a class="eb" href="../" style="text-decoration:none;display:inline-flex;align-items:center;min-height:44px">&larr; Portfolio Command Center</a><h1>/*TITLE*/</h1><div class="m" id="asof"></div></div>
+<div class="acts"><button class="btn mw-hover" id="share">Share</button><button class="btn mw-hover" id="lock">Lock</button></div></header>
+<main id="main"></main>
+<footer>Built by Max Weberman</footer></div>
+<div class="toast" id="toast">Link Copied</div><div class="sheet" id="sheet" onclick="if(event.target===this)this.classList.remove('on')"><div id="sheetIn"></div></div>
+<script>/*LIB*/</script>
+<script>/*DATA*/
+const PAGE='/*PAGE*/';
+/*JS*/
+</script></body></html>

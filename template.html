@@ -27,6 +27,8 @@ li:first-child{border-top:0}.rou li{justify-content:flex-start}.rou .ic{color:#0
 .link{display:flex;gap:12px;align-items:center;border:1px solid var(--mw-border);border-radius:12px;padding:14px 16px;color:inherit;text-decoration:none;min-height:44px}
 .cols{display:grid;grid-template-columns:1fr;gap:0 24px}
 .board{display:block}
+.report{border:1px solid var(--mw-border);border-left:4px solid #0f766e;border-radius:.6rem;padding:10px 14px;margin:16px 0 0}.report ul{list-style:none;border:0;margin:4px 0 0;padding:0}.report li{border:0;padding:2px 0;min-height:0;justify-content:flex-start}
+.tile{color:inherit;text-decoration:none;min-height:44px}.tile .tb{flex:1;min-width:0}.tf{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.lk{display:inline-flex;align-items:center;gap:4px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--mw-muted-text)}.lk .ic{width:14px;height:14px;margin:0;color:inherit}a.tile:hover h3{text-decoration:underline}.tile.off{background:#fafafa;cursor:default}
 footer{margin-top:40px;border-top:1px solid var(--mw-border);padding-top:16px;font-size:13px;color:var(--mw-muted-text);letter-spacing:.1em;text-transform:uppercase}
 .toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#fff;border:1px solid var(--mw-border);padding:8px 14px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.1);display:none}
 @media(min-width:700px){.grid{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr 1fr}h1{font-size:48px}}
@@ -52,8 +54,8 @@ footer{margin-top:40px;border-top:1px solid var(--mw-border);padding-top:16px;fo
 </style></head><body><div class="wrap">
 <header><div><div class="eyebrow">Command Center</div><h1>Portfolio</h1><div class="upd">Updated {{UPDATED}}</div></div>
 <button class="btn mw-hover" id="share">{{SHARE}}Share</button></header>
-<p class="status"><b>Status:</b> {{STATUS}}</p>
-<h2>What I Own</h2><div class="grid">{{LANES}}</div>
+{{REPORT}}<p class="status"><b>Status:</b> {{STATUS}}</p>
+<h2>Dashboards</h2><div class="grid">{{LANES}}</div>
 <div class="board">
 <div class="cols"><section><h2>Decisions Max Owes</h2><ul>{{DEC}}</ul></section><section><h2>Open Items</h2><ul>{{OPEN}}</ul></section></div>
 <div class="cols"><section><h2>Routines</h2><ul class="rou">{{ROU}}</ul></section><section><h2>Recent Work</h2><ul class="rec">{{REC}}</ul></section></div>

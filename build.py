@@ -1,4 +1,8 @@
-import json,html,datetime,re,sys
+import json,html,datetime,re,sys,os
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__))); os.chdir(os.path.dirname(os.path.abspath(__file__)))
+import subdash
+state=subdash.build()  # 'published' | 'existing' | 'setup'
+live=state in('published','existing')
 d=json.load(open('data.json'))
 d['updated']=datetime.datetime.now().strftime('%b %-d, %Y, %-I:%M %p ICT')
 json.dump(d,open('data.json','w'),indent=1)
@@ -7,16 +11,26 @@ I={'chart':'<path d="M3 20h18M6 16l4-5 3 3 5-7"/>','receipt':'<path d="M6 3h12v1
 ic=lambda k:f'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">{I[k]}</svg>'
 cls=lambda s:{'Done':'done','In Progress':'prog','Waiting on Max':'wait'}[s]
 pill=lambda s:f'<span class="pill {cls(s)}">{e(s)}</span>'
-lanes=''.join(f'<div class="card mw-hover">{ic(l["icon"])}<div><h3>{e(l["name"])}</h3><p>{e(l["note"])}</p>{pill(l["status"])}</div></div>' for l in d['lanes'])
+def tile(l):
+    inner=f'{ic(l["icon"])}<div class="tb"><h3>{e(l["name"])}</h3><p>{e(l["note"])}</p><div class="tf">{pill(l["status"])}<span class="lk">{ic("lock")}{"Private, Tap To Open" if live else "Locked, Setting Up"}</span></div></div>'
+    return f'<a class="card tile mw-hover" href="s/{l["slug"]}.html">{inner}</a>' if live else f'<div class="card tile off" aria-disabled="true">{inner}</div>'
+lanes=''.join(tile(l) for l in d['lanes'])
+h=datetime.datetime.now().hour
+rt='Morning Report' if h<12 else 'Evening Report'
+rep=f'<div class="report"><span class="eyebrow">{rt}</span><ul>'+''.join(f'<li>{e(x)}</li>' for x in d.get('report',{}).get('morning' if h<12 else 'evening',[]))+'</ul></div>'
 opn=''.join(f'<li><span>{e(o["t"])}</span>{pill(o["s"])}</li>' for o in d['open'])
 dec=''.join(f'<li><span>{e(x)}</span>{pill("Waiting on Max")}</li>' for x in d['decisions'])
 rec=''.join(f'<li>{e(x)}</li>' for x in d['recent'])
 rou=''.join(f'<li>{ic("clock")}<span><b>{e(r["n"])}</b><br><small>{e(r["w"])}</small></span></li>' for r in d['routines'])
 lnk=''.join(f'<a class="link mw-hover" href="{e(l["u"])}" target="_blank" rel="noopener">{ic("lock")}<span><b>{e(l["n"])}</b><br><small>{e(l["l"])}</small></span></a>' for l in d['links'])
 page=open('template.html').read()
-for k,v in dict(STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share')).items(): page=page.replace('{{'+k+'}}',v)
+for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share')).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers
 if re.search(r'\$\s?\d|\d[\d,]*\.\d{2}\b|\b(?!20[0-9]{2}\b)\d{4,}\b|\d+(\.\d+)?\s?%|\d+k\b',re.sub(r'<[^>]+>','',re.sub(r'(?s)<(style|script|svg).*?</\1>','',page))):
     sys.exit('PRIVACY GUARD: possible figure found; not publishing')
 open('index.html','w').write(page)
-print('built',d['updated'])
+if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles
+    live=True; lanes=''.join(tile(l) for l in d['lanes']); p=open('template.html').read()
+    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share')).items(): p=p.replace('{{'+k+'}}',v)
+    import shutil; open(subdash.PRIV+'/preview/index.html','w').write(p); shutil.copy('brand-tokens.css',subdash.PRIV+'/preview/')
+print('built',d['updated'],'| sub-dashboards:',state)

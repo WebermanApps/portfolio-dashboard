@@ -1,42 +1,48 @@
 {
- "updated": "Oct 13, 2026, 12:43 PM ICT",
+ "updated": "Oct 13, 2026, 2:19 PM ICT",
  "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
  "lanes": [
   {
    "name": "Portfolio",
    "icon": "chart",
    "status": "In Progress",
-   "note": "Weekly review and 200-day watchlist running."
+   "note": "Weekly review and 200-day watchlist running.",
+   "slug": "portfolio"
   },
   {
    "name": "Spending",
    "icon": "receipt",
    "status": "Done",
-   "note": "Ledgers and subscriptions review complete."
+   "note": "Ledgers and subscriptions review complete.",
+   "slug": "spending"
   },
   {
    "name": "Cards And Bills",
    "icon": "card",
    "status": "In Progress",
-   "note": "Due-date alerts live; autopay watch open."
+   "note": "Due-date alerts live; autopay watch open.",
+   "slug": "bills"
   },
   {
    "name": "Taxes",
    "icon": "doc",
    "status": "Waiting on Max",
-   "note": "CPA packet sent; next step needs a reply from Max."
+   "note": "CPA packet sent; next step needs a reply from Max.",
+   "slug": "taxes"
   },
   {
    "name": "Rentals Finance",
    "icon": "house",
    "status": "Waiting on Max",
-   "note": "Equity agreement terms need Max's answers."
+   "note": "Equity agreement terms need Max's answers.",
+   "slug": "rentals"
   },
   {
-   "name": "Smart UpKeep Model Checks",
+   "name": "Smart UpKeep Model",
    "icon": "check",
    "status": "Done",
-   "note": "Model review handed to UpKeep."
+   "note": "Model review handed to UpKeep.",
+   "slug": "upkeep"
   }
  ],
  "open": [
@@ -98,5 +104,15 @@
    "u": "https://github.com/WebermanApps/finance-review",
    "l": "Private, sign in to GitHub"
   }
- ]
+ ],
+ "report": {
+  "morning": [
+   "Portfolio dashboard now opens six private sub-dashboards from its tiles",
+   "Taxes still waiting on the CPA's reply"
+  ],
+  "evening": [
+   "Portfolio dashboard now opens six private sub-dashboards from its tiles",
+   "Taxes still waiting on the CPA's reply"
+  ]
+ }
 }
