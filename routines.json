@@ -1,0 +1,73 @@
+{
+ "updated": "2026-10-14 14:47 ICT",
+ "routines": [
+  {
+   "name": "Morning Report On Dashboard",
+   "group": "Reports",
+   "schedule_plain": "Daily At 4:43 AM ICT",
+   "status": "on",
+   "last_run": "Today 4:52 AM"
+  },
+  {
+   "name": "Evening Report On Dashboard",
+   "group": "Reports",
+   "schedule_plain": "Daily At 6:00 PM ICT",
+   "status": "on",
+   "last_run": "Oct 13, 6:01 PM"
+  },
+  {
+   "name": "200-Day Watchlist Buy Signals",
+   "group": "Markets",
+   "schedule_plain": "Tue To Sat At 8:27 AM ICT",
+   "status": "on",
+   "last_run": "Today 8:27 AM"
+  },
+  {
+   "name": "Roth And Kraken Cost-Basis Reminder",
+   "group": "Markets",
+   "schedule_plain": "Mondays At 8:56 AM ICT",
+   "status": "on",
+   "last_run": "Oct 12, 8:56 AM"
+  },
+  {
+   "name": "Sunday Portfolio Review",
+   "group": "Markets",
+   "schedule_plain": "Sundays At 9:01 AM ICT",
+   "status": "on"
+  },
+  {
+   "name": "Card Due Alerts",
+   "group": "Bills & Statements",
+   "schedule_plain": "Daily At 7:58 AM ICT",
+   "status": "on",
+   "last_run": "Today 8:07 AM"
+  },
+  {
+   "name": "Card Category Leftovers Reminder",
+   "group": "Bills & Statements",
+   "schedule_plain": "Mondays At 8:46 AM ICT",
+   "status": "on",
+   "last_run": "Oct 12, 8:52 AM"
+  },
+  {
+   "name": "Monthly Statement Upload Nudge",
+   "group": "Bills & Statements",
+   "schedule_plain": "2nd Of Each Month At 9:08 AM ICT",
+   "status": "on",
+   "last_run": "Oct 2, 9:15 AM"
+  },
+  {
+   "name": "Monthly Finance Statements Review",
+   "group": "Bills & Statements",
+   "schedule_plain": "5th Of Each Month At 9:02 AM ICT",
+   "status": "on",
+   "last_run": "Oct 5, 9:05 AM"
+  },
+  {
+   "name": "Mellow Wood Rent Check",
+   "group": "Property",
+   "schedule_plain": "2nd Of Each Month At 8:39 AM ICT",
+   "status": "on"
+  }
+ ]
+}

@@ -2,6 +2,7 @@
 <title>Portfolio Command Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Khand:wght@600;700&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="brand-tokens.css">
+<link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/routines-section.css?v=1">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#fff;color:var(--mw-foreground);font-family:var(--mw-font-body);line-height:1.5}
 .wrap{max-width:1120px;margin:0 auto;padding:20px 16px 40px}
@@ -115,15 +116,31 @@ h1{font-size:56px!important;margin-top:4px}.rule{width:56px;height:4px;backgroun
 a.drow:hover b{text-decoration:underline}
 @media(min-width:1600px){.drow{min-height:72px}.drow b{font-size:28px}.dprog{font-size:16px}}
 @media(min-width:2000px){.drow{min-height:88px}.drow b{font-size:32px}.dprog{font-size:18px}}
+
+/* agent-dashboards-01 A: Icon Row — each dashboard as a small icon tile */
+.irow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.itile{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:6px;min-height:118px;padding:14px 8px 12px;border:1px solid var(--mw-border);border-radius:12px;background:#fff;color:inherit;text-decoration:none;text-align:center}
+.itile .ib{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%;background:#FBEDE7;color:#C1502E}
+.itile .ib .ic{width:24px;height:24px}
+.itile b{font:700 18px Khand,sans-serif;line-height:1.05}
+.itile .pill{font-size:10px;padding:2px 8px;letter-spacing:.04em;margin-top:auto}
+.itile .clk{position:absolute;top:8px;right:8px;width:14px;height:14px;color:#737373}
+.itile.off{background:#fafafa;cursor:default}.itile.off b{color:#525252}.itile.off .ib{background:#f0f0f0;color:#8a8a8a}
+a.itile:hover b{text-decoration:underline}
+@media(min-width:900px){.irow{grid-template-columns:repeat(6,1fr)}.itile{min-height:132px}.itile b{font-size:20px}}
+@media(min-width:1600px){.itile{min-height:160px}.itile .ib{width:56px;height:56px}.itile .ib .ic{width:30px;height:30px}.itile b{font-size:24px}.itile .pill{font-size:12px}}
+@media(min-width:2000px){.itile{min-height:180px}.itile b{font-size:28px}}
+#routines{margin-top:8px}
 </style><script src="ptr.js" defer></script></head><body><div class="mini" aria-hidden="true"><a href="https://webermanapps.github.io/a-o956qercs5ubd57y/" tabindex="-1">Apps Home</a><b>Portfolio</b><span>Updated {{UPDATED}}</span></div><div class="wrap">
 <header><a class="eyebrow home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/" style="display:inline-flex;align-items:center;min-height:44px;min-width:44px;text-decoration:none;color:inherit">Apps Home</a><div class="greet">{{GREET}}</div><h1>Portfolio</h1><div class="rule"></div><div class="upd">Command Center · Updated {{UPDATED}}</div></header>
 {{DECKS}}{{REPORT}}<div class="urg"><details class="alerts dec"><summary><span class="tag r">{{NDEC}} Decisions</span> <span class="dech">Waiting On Max</span></summary><div class="ai"><ul class="rows">{{DEC}}</ul></div></details><details class="alerts"><summary><span class="tag w">1 Watch Item</span> Status</summary><div class="ai"><div>{{STATUS}}</div></div></details></div>
-<h2>Dashboards</h2><div class="trows">{{LANES}}</div>
+<h2>Dashboards</h2><div class="irow">{{LANES}}</div>
 <section class="myapps"><h2>My Apps</h2><div class="apps3">{{MYAPPS}}</div></section>
 <div class="board">
 <div class="cols"><section><h2>Open Items</h2><ul class="rows s5">{{OPEN}}</ul></section>
-<div class="cols"><section><h2>Routines</h2><ul class="rows s5">{{ROU}}</ul></section><section><h2>Recent Work</h2><ul class="rows s5">{{REC}}</ul></section></div>
+<section><h2>Recent Work</h2><ul class="rows s5">{{REC}}</ul></section></div>
 </div>
+<section data-routines="routines.json" id="routines"></section><script src="https://webermanapps.github.io/style-swipe/kit/routines-section.js?v=1" defer></script>
 <div style="display:flex;justify-content:center;margin-top:32px"><button class="btn mw-hover" id="share">{{SHARE}}Share</button></div><footer><a href="https://maxweberman.com" target="_blank" rel="noopener" style="color:inherit;display:inline-flex;align-items:center;min-height:44px">Built by Max Weberman</a></footer></div><nav class="tabs" aria-label="Dashboard tabs"><a href="https://webermanapps.github.io/a-o956qercs5ubd57y/"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7v9H4z"/></svg>Apps Home</a><a href="./" class="on" aria-current="page"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>Command</a><a href="s/portfolio.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 16l4-5 3 3 5-7"/></svg>Portfolio</a><a href="s/spending.html"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></svg>Spending</a></nav><div class="toast" id="t">Link Copied</div>
 <script>document.getElementById('share').onclick=async()=>{const u=location.href;try{if(navigator.share){await navigator.share({title:'Portfolio Command Center',url:u});return}}catch(e){return}try{await navigator.clipboard.writeText(u)}catch(e){}const t=document.getElementById('t');t.style.display='block';setTimeout(()=>t.style.display='none',1600)}</script>
 <script>/* cache-buster: if this copy is older than the live one, reload the fresh page */

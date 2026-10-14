@@ -1,5 +1,5 @@
 {
- "updated": "Oct 14, 2026, 1:42 PM ICT",
+ "updated": "Oct 14, 2026, 2:47 PM ICT",
  "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
  "lanes": [
   {
@@ -71,6 +71,7 @@
   "Portfolio: review the allocation suggestion"
  ],
  "recent": [
+  "Dashboards as an icon row; Routines section grouped by area",
   "R63 Decks To Finish pin + public report.json",
   "Layout picks applied: one-line report, decisions under it, compact rows",
   "My Apps row moved to the top",
@@ -83,24 +84,72 @@
  ],
  "routines": [
   {
-   "n": "Card Due Alerts",
-   "w": "Daily, 7:58 AM ICT"
+   "name": "Morning Report On Dashboard",
+   "group": "Reports",
+   "schedule_plain": "Daily At 4:43 AM ICT",
+   "status": "on",
+   "last_run": "Today 4:52 AM"
   },
   {
-   "n": "200-Day Watchlist Scan",
-   "w": "Tue to Sat, 8:27 AM ICT"
+   "name": "Evening Report On Dashboard",
+   "group": "Reports",
+   "schedule_plain": "Daily At 6:00 PM ICT",
+   "status": "on",
+   "last_run": "Oct 13, 6:01 PM"
   },
   {
-   "n": "Portfolio Review",
-   "w": "Sundays"
+   "name": "200-Day Watchlist Buy Signals",
+   "group": "Markets",
+   "schedule_plain": "Tue To Sat At 8:27 AM ICT",
+   "status": "on",
+   "last_run": "Today 8:27 AM"
   },
   {
-   "n": "Monthly Statements Review",
-   "w": "5th of each month"
+   "name": "Roth And Kraken Cost-Basis Reminder",
+   "group": "Markets",
+   "schedule_plain": "Mondays At 8:56 AM ICT",
+   "status": "on",
+   "last_run": "Oct 12, 8:56 AM"
   },
   {
-   "n": "Category And Cost-Basis Nudges",
-   "w": "Weekly"
+   "name": "Sunday Portfolio Review",
+   "group": "Markets",
+   "schedule_plain": "Sundays At 9:01 AM ICT",
+   "status": "on"
+  },
+  {
+   "name": "Card Due Alerts",
+   "group": "Bills & Statements",
+   "schedule_plain": "Daily At 7:58 AM ICT",
+   "status": "on",
+   "last_run": "Today 8:07 AM"
+  },
+  {
+   "name": "Card Category Leftovers Reminder",
+   "group": "Bills & Statements",
+   "schedule_plain": "Mondays At 8:46 AM ICT",
+   "status": "on",
+   "last_run": "Oct 12, 8:52 AM"
+  },
+  {
+   "name": "Monthly Statement Upload Nudge",
+   "group": "Bills & Statements",
+   "schedule_plain": "2nd Of Each Month At 9:08 AM ICT",
+   "status": "on",
+   "last_run": "Oct 2, 9:15 AM"
+  },
+  {
+   "name": "Monthly Finance Statements Review",
+   "group": "Bills & Statements",
+   "schedule_plain": "5th Of Each Month At 9:02 AM ICT",
+   "status": "on",
+   "last_run": "Oct 5, 9:05 AM"
+  },
+  {
+   "name": "Mellow Wood Rent Check",
+   "group": "Property",
+   "schedule_plain": "2nd Of Each Month At 8:39 AM ICT",
+   "status": "on"
   }
  ],
  "links": [

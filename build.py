@@ -12,10 +12,11 @@ I={'chart':'<path d="M3 20h18M6 16l4-5 3 3 5-7"/>','receipt':'<path d="M6 3h12v1
 ic=lambda k:f'<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">{I[k]}</svg>'
 cls=lambda s:{'Done':'done','In Progress':'prog','Waiting on Max':'wait'}[s]
 pill=lambda s:f'<span class="pill {cls(s)}">{e(s)}</span>'
-def tile(l):
+def tile(l):  # agent-dashboards-01 pick A: Icon Row (each linked dashboard as a small icon tile)
     live_t=live and l['slug'] in subdash.LIVE
-    inner=f'{ic(l["icon"])}<span><b>{e(l["name"])}</b><small>{"Private, Tap To Unlock" if live_t else "Locked, Setting Up"}</small></span>{pill(l["status"])}<svg class="ic clk" viewBox="0 0 24 24" aria-label="Locked">{I["lock"]}</svg>'
-    return f'<a class="trow mw-hover" href="s/{l["slug"]}.html?v={V}">{inner}</a>' if live_t else f'<div class="trow off" aria-disabled="true">{inner}</div>'
+    sub="Private, Tap To Unlock" if live_t else "Locked, Setting Up"
+    inner=f'<span class="ib">{ic(l["icon"])}</span><b>{e(l["name"])}</b>{pill(l["status"])}<svg class="ic clk" viewBox="0 0 24 24" aria-hidden="true">{I["lock"]}</svg>'
+    return f'<a class="itile mw-hover" href="s/{l["slug"]}.html?v={V}" title="{e(l["name"])}: {sub}" aria-label="{e(l["name"])}, {e(l["status"])}, {sub}">{inner}</a>' if live_t else f'<div class="itile off" aria-disabled="true" title="{e(l["name"])}: {sub}">{inner}</div>'
 lanes=''.join(tile(l) for l in d['lanes'])
 h=datetime.datetime.now().hour
 rt=d.get('report',{}).get('title') or ('Morning Report' if h<12 else 'Evening Report')
@@ -40,7 +41,9 @@ row=lambda t,right,det:f'<li><details><summary><span>{t}</span><span class="dt">
 opn=''.join(row(e(o["t"]),pill(o["s"]),f'Status: {e(o["s"])}. Owner: Portfolio.') for o in d['open'])
 dec=''.join(row(e(x),pill("Waiting on Max"),'Needs your answer; Portfolio follows up once you reply.') for x in d['decisions'])
 rec=''.join(row(e(x),'Oct 13',e(x)) for x in d['recent'])
-rou=''.join(row(e(r["n"]),e(r["w"]),f'{e(r["n"])} runs {e(r["w"])}.') for r in d['routines'])
+rou=''  # R65: Routines now render from routines.json via the shared kit component
+# R65 routines.json (names, groups, ICT schedules only; no figures, no secrets)
+json.dump({'updated':datetime.datetime.now().strftime('%Y-%m-%d %H:%M ICT'),'routines':[{k:r[k] for k in ('name','group','schedule_plain','status','last_run') if r.get(k)} for r in d['routines']]},open('routines.json','w'),indent=1)
 lnk=''.join(f'<a class="link mw-hover" href="{e(l["u"])}" target="_blank" rel="noopener">{ic("lock")}<span><b>{e(l["n"])}</b><br><small>{e(l["l"])}</small></span></a>' for l in d['links'])
 MY=[('Portfolio',f's/portfolio.html?v={V}','chart','Private'),('Spending',f's/spending.html?v={V}','receipt','Private'),('Finance Review','https://github.com/WebermanApps/finance-review','doc','Private Repo')]
 myapps=''.join(f'<a class="app mw-hover" href="{e(u)}">{ic(i)}<b>{e(n)}</b><small>{e(s)}</small></a>' for n,u,i,s in MY)
