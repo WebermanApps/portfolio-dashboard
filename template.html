@@ -105,9 +105,19 @@ h1{font-size:56px!important;margin-top:4px}.rule{width:56px;height:4px;backgroun
 .cols{gap:0 32px}
 @media(min-width:2000px){.wrap{max-width:1800px!important;margin:0 auto!important;padding-left:48px!important;padding-right:48px!important}.board{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}.board .cols{display:contents}h1{font-size:88px!important}.greet{font-size:18px}.rule{width:80px;height:5px}.rep h3{font-size:38px}.trow b{font-size:30px}.trow{min-height:96px}}
 @media(min-width:1600px){h1{font-size:76px!important}.urg .alerts>summary{font-size:18px}}
+
+/* R63 Decks To Finish — newest unfinished pinned above report */
+.decks-pin{margin:20px 0 0}.decks-pin h2{margin:0 0 12px!important}
+.drows{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--mw-border);border-radius:12px;overflow:hidden;background:#fff}
+.drow{display:flex;align-items:center;gap:14px;min-height:56px;padding:14px 16px;border-top:1px solid var(--mw-border);color:inherit;text-decoration:none;background:#fff}
+.drow:first-child{border-top:0}.drow b{font:700 22px Khand,sans-serif;flex:1;min-width:0}
+.dprog{margin-left:auto;font:600 13px Hind,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#C1502E;white-space:nowrap}
+a.drow:hover b{text-decoration:underline}
+@media(min-width:1600px){.drow{min-height:72px}.drow b{font-size:28px}.dprog{font-size:16px}}
+@media(min-width:2000px){.drow{min-height:88px}.drow b{font-size:32px}.dprog{font-size:18px}}
 </style><script src="ptr.js" defer></script></head><body><div class="mini" aria-hidden="true"><a href="https://webermanapps.github.io/a-o956qercs5ubd57y/" tabindex="-1">Apps Home</a><b>Portfolio</b><span>Updated {{UPDATED}}</span></div><div class="wrap">
 <header><a class="eyebrow home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/" style="display:inline-flex;align-items:center;min-height:44px;min-width:44px;text-decoration:none;color:inherit">Apps Home</a><div class="greet">{{GREET}}</div><h1>Portfolio</h1><div class="rule"></div><div class="upd">Command Center · Updated {{UPDATED}}</div></header>
-{{REPORT}}<div class="urg"><details class="alerts dec"><summary><span class="tag r">{{NDEC}} Decisions</span> <span class="dech">Waiting On Max</span></summary><div class="ai"><ul class="rows">{{DEC}}</ul></div></details><details class="alerts"><summary><span class="tag w">1 Watch Item</span> Status</summary><div class="ai"><div>{{STATUS}}</div></div></details></div>
+{{DECKS}}{{REPORT}}<div class="urg"><details class="alerts dec"><summary><span class="tag r">{{NDEC}} Decisions</span> <span class="dech">Waiting On Max</span></summary><div class="ai"><ul class="rows">{{DEC}}</ul></div></details><details class="alerts"><summary><span class="tag w">1 Watch Item</span> Status</summary><div class="ai"><div>{{STATUS}}</div></div></details></div>
 <h2>Dashboards</h2><div class="trows">{{LANES}}</div>
 <section class="myapps"><h2>My Apps</h2><div class="apps3">{{MYAPPS}}</div></section>
 <div class="board">

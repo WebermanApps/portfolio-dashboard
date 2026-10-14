@@ -44,14 +44,30 @@ rou=''.join(row(e(r["n"]),e(r["w"]),f'{e(r["n"])} runs {e(r["w"])}.') for r in d
 lnk=''.join(f'<a class="link mw-hover" href="{e(l["u"])}" target="_blank" rel="noopener">{ic("lock")}<span><b>{e(l["n"])}</b><br><small>{e(l["l"])}</small></span></a>' for l in d['links'])
 MY=[('Portfolio',f's/portfolio.html?v={V}','chart','Private'),('Spending',f's/spending.html?v={V}','receipt','Private'),('Finance Review','https://github.com/WebermanApps/finance-review','doc','Private Repo')]
 myapps=''.join(f'<a class="app mw-hover" href="{e(u)}">{ic(i)}<b>{e(n)}</b><small>{e(s)}</small></a>' for n,u,i,s in MY)
+# R63: pin unfinished decks at top (newest first). Finished = submitted/done.
+DONE={'submitted','done','finished'}
+unfin=[x for x in d.get('decks',[]) if str(x.get('status','')).lower() not in DONE]
+unfin=list(reversed(unfin))  # data.json append order = oldest→newest
+def drow(x):
+    prog=f'{int(x.get("answered",0))} of {int(x.get("total",0))}'
+    return f'<a class="drow mw-hover" href="{e(x["url"])}"><b>{e(x["name"])}</b><span class="dprog">{e(prog)}</span></a>'
+decks=('' if not unfin else
+  '<section class="decks-pin" aria-label="Decks To Finish"><h2>Decks To Finish</h2><div class="drows">'
+  +''.join(drow(x) for x in unfin)+'</div></section>')
 page=open('template.html').read()
-for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET).items(): page=page.replace('{{'+k+'}}',v)
+for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers
 if re.search(r'\$\s?\d|\d[\d,]*\.\d{2}\b|\b(?!20[0-9]{2}\b)\d{4,}\b|\d+(\.\d+)?\s?%|\d+k\b',re.sub(r'<[^>]+>','',re.sub(r'(?s)<(style|script|svg).*?</\1>','',page))):
     sys.exit('PRIVACY GUARD: possible figure found; not publishing')
 open('index.html','w').write(page)
+
+# Public report meta (no figures): morning/evening publish + update.sh both land here
+_now=datetime.datetime.now()
+_rtype=os.environ.get('PORTFOLIO_REPORT_TYPE') or ('Morning Report' if 'Morning' in rt else ('Evening Report' if 'Evening' in rt else ('Morning Report' if _now.hour<12 else 'Evening Report')))
+json.dump({'type':_rtype,'posted_at':_now.strftime('%Y-%m-%dT%H:%M:%S+07:00'),'posted_ict':_now.strftime('%b %-d, %Y, %-I:%M %p ICT')},open('report.json','w'),indent=1)
+
 if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles
     live=True; lanes=''.join(tile(l) for l in d['lanes']); p=open('template.html').read()
-    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET).items(): p=p.replace('{{'+k+'}}',v)
+    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks).items(): p=p.replace('{{'+k+'}}',v)
     import shutil; open(subdash.PRIV+'/preview/index.html','w').write(p); shutil.copy('brand-tokens.css',subdash.PRIV+'/preview/')
 print('built',d['updated'],'| sub-dashboards:',state)

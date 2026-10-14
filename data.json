@@ -1,5 +1,5 @@
 {
- "updated": "Oct 14, 2026, 1:09 PM ICT",
+ "updated": "Oct 14, 2026, 1:42 PM ICT",
  "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
  "lanes": [
   {
@@ -71,6 +71,7 @@
   "Portfolio: review the allocation suggestion"
  ],
  "recent": [
+  "R63 Decks To Finish pin + public report.json",
   "Layout picks applied: one-line report, decisions under it, compact rows",
   "My Apps row moved to the top",
   "Dashboard style picks applied (tabs, color band, action tiles)",
@@ -116,8 +117,7 @@
    "Portfolio: Roth and Kraken price refresh, plus the 200-day watchlist scan at 8:27",
    "Cards: nothing due today or tomorrow; Amex Business Platinum is due Friday on autopay",
    "Cards: Amex Delta was due yesterday on autopay; confirm it posted",
-   "Rentals: equity agreement questions still waiting on Max",
-   "Dashboard: holding on new submission changes until Max's cleanup today"
+   "Rentals: equity agreement questions still waiting on Max"
   ],
   "evening": [
    "Portfolio: prices refreshed this evening; Portfolio and Spending pages live behind the password",
@@ -127,5 +127,17 @@
    "Taxes: still waiting on the CPA's reply",
    "Tomorrow: Morning Report by 5:00, card due check 7:58, Roth and Kraken refresh"
   ]
- }
+ },
+ "decks": [
+  {
+   "name": "Folio Dashboard Deck",
+   "url": "https://webermanapps.github.io/style-swipe/folio-dashboard-kuijvp/",
+   "answered": 19,
+   "total": 20,
+   "status": "submitted",
+   "carry_skips": [
+    "folio-dashboard-01"
+   ]
+  }
+ ]
 }
