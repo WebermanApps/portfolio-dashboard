@@ -19,9 +19,12 @@ def tile(l):  # agent-dashboards-01 pick A: Icon Row (each linked dashboard as a
     return f'<a class="itile mw-hover" href="s/{l["slug"]}.html?v={V}" title="{e(l["name"])}: {sub}" aria-label="{e(l["name"])}, {e(l["status"])}, {sub}">{inner}</a>' if live_t else f'<div class="itile off" aria-disabled="true" title="{e(l["name"])}: {sub}">{inner}</div>'
 lanes=''.join(tile(l) for l in d['lanes'])
 h=datetime.datetime.now().hour
-rt=d.get('report',{}).get('title') or ('Morning Report' if h<12 else 'Evening Report')
-RI=d.get('report',{}).get('morning' if h<12 else 'evening',[])
-if not rt.startswith('Fresh Start'): rt=rt.replace('Morning Report','Evening Report') if h>=12 else rt.replace('Evening Report','Morning Report')
+# Morning Report only (Evening Report retired Oct 14 2026). Never auto-relabel to Evening.
+rt=d.get('report',{}).get('title') or 'Morning Report'
+if not rt.startswith('Fresh Start'):
+    rt=rt.replace('Evening Report','Morning Report')
+    if 'Morning Report' not in rt and not rt.startswith('Fresh Start'): rt='Morning Report'
+RI=d.get('report',{}).get('morning',[])
 TI={'Portfolio':('s/portfolio.html','chart'),'Spending':('s/spending.html','receipt'),'Finance Review':('https://github.com/WebermanApps/finance-review','doc')}
 def tileurl(x):
     for k,(u,i) in TI.items():
@@ -54,13 +57,14 @@ unfin=list(reversed(unfin))  # data.json append order = oldest→newest
 def drow(x):
     prog=f'{int(x.get("answered",0))} of {int(x.get("total",0))}'
     return f'<a class="drow mw-hover" href="{e(x["url"])}"><b>{e(x["name"])}</b><span class="dprog">{e(prog)}</span></a>'
-decks=''  # R66: unfinished decks now render inside the kit Deck Launcher (launcher.json), not as a separate pin
-# R66: sync unfinished (newest first) into launcher.json; keep agent/categories/ready as written
-try: LJ=json.load(open('launcher.json'))
-except Exception: LJ=None
-if LJ is not None:
-    LJ['unfinished']=[{'name':x['name'],'url':x['url'],'answered':int(x.get('answered',0)),'total':int(x.get('total',20))} for x in unfin]
-    json.dump(LJ,open('launcher.json','w'),indent=1)
+decks=''  # R66: unfinished decks render inside the Ready To Swipe shelf (shelf.json pinned), not as a separate pin
+# R66 Ready To Swipe: sync unfinished (newest first) into shelf.json pinned so the 5-cap counts them
+try: SH=json.load(open('shelf.json'))
+except Exception: SH={'agent':'portfolio','decks':[],'pinned':[],'done':[]}
+SH.setdefault('agent','portfolio'); SH.setdefault('decks',[]); SH.setdefault('done',[])
+SH['pinned']=[{'name':x['name'],'url':x['url'],'answered':int(x.get('answered',0))} for x in unfin]
+SH['updated']=datetime.datetime.now().astimezone().isoformat(timespec='seconds')
+json.dump(SH,open('shelf.json','w'),indent=1)
 page=open('template.html').read()
 for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers
@@ -68,9 +72,12 @@ if re.search(r'\$\s?\d|\d[\d,]*\.\d{2}\b|\b(?!20[0-9]{2}\b)\d{4,}\b|\d+(\.\d+)?\
     sys.exit('PRIVACY GUARD: possible figure found; not publishing')
 open('index.html','w').write(page)
 
-# Public report meta (no figures): morning/evening publish + update.sh both land here
+# Public report meta (no figures): Morning Report publish + update.sh land here (Evening Report retired Oct 14 2026)
 _now=datetime.datetime.now()
-_rtype=os.environ.get('PORTFOLIO_REPORT_TYPE') or ('Morning Report' if 'Morning' in rt else ('Evening Report' if 'Evening' in rt else ('Morning Report' if _now.hour<12 else 'Evening Report')))
+# Morning Report only — never write Evening Report (retired). Prefer env from morning script; default Morning Report.
+_rtype=os.environ.get('PORTFOLIO_REPORT_TYPE') or 'Morning Report'
+if 'Evening' in _rtype: _rtype='Morning Report'
+if 'Morning' not in _rtype and not _rtype.startswith('Fresh'): _rtype='Morning Report'
 json.dump({'type':_rtype,'posted_at':_now.strftime('%Y-%m-%dT%H:%M:%S+07:00'),'posted_ict':_now.strftime('%b %-d, %Y, %-I:%M %p ICT')},open('report.json','w'),indent=1)
 
 if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles

@@ -1,0 +1,62 @@
+{
+ "agent": "portfolio",
+ "updated": "2026-10-14T20:20:32+07:00",
+ "decks": [
+  {
+   "id": "folio-dashboard-2",
+   "name": "Folio Dashboard Details",
+   "url": "https://webermanapps.github.io/style-swipe/folio-dashboard-details-vxmzcb/",
+   "total": 20,
+   "topic": "dashboards",
+   "tag": "Dashboard",
+   "added": "2026-10-14T20:16:17+07:00",
+   "blurb": "20 cards, board layout and section details"
+  },
+  {
+   "id": "portfolio-markets-portfolio-and-markets-deck",
+   "name": "Portfolio And Markets Deck",
+   "url": "https://webermanapps.github.io/style-swipe/portfolio-markets-portfolio-and-markets-deck-hgqzmf/",
+   "total": 20,
+   "topic": "portfolio-markets",
+   "source": "/workspace/ops/folio/dashboard/shelf-sources/portfolio-markets.json",
+   "added": "2026-10-14T20:18:31+07:00",
+   "tag": "Markets",
+   "blurb": "20 cards, ready now"
+  },
+  {
+   "id": "portfolio-spending-spending-deck",
+   "name": "Spending Deck",
+   "url": "https://webermanapps.github.io/style-swipe/portfolio-spending-spending-deck-llxfrp/",
+   "total": 20,
+   "topic": "portfolio-spending",
+   "source": "/workspace/ops/folio/dashboard/shelf-sources/spending.json",
+   "added": "2026-10-14T20:18:31+07:00",
+   "tag": "Spending",
+   "blurb": "20 cards, ready now"
+  },
+  {
+   "id": "portfolio-thumbnail-thumbnail-deck",
+   "name": "Thumbnail Deck",
+   "url": "https://webermanapps.github.io/style-swipe/portfolio-thumbnail-thumbnail-deck-qxl4vg/",
+   "total": 20,
+   "topic": "portfolio-thumbnail",
+   "source": "/workspace/ops/folio/dashboard/shelf-sources/thumbnail.json",
+   "added": "2026-10-14T20:18:32+07:00",
+   "tag": "Thumbnail",
+   "blurb": "20 cards, ready now"
+  },
+  {
+   "id": "portfolio-taxes-taxes-and-money-habits-deck",
+   "name": "Taxes And Money Habits Deck",
+   "url": "https://webermanapps.github.io/style-swipe/portfolio-taxes-taxes-and-money-habits-deck-ak99mf/",
+   "total": 20,
+   "topic": "portfolio-taxes",
+   "source": "/workspace/ops/folio/dashboard/shelf-sources/taxes-habits.json",
+   "added": "2026-10-14T20:18:32+07:00",
+   "tag": "Taxes",
+   "blurb": "20 cards, ready now"
+  }
+ ],
+ "pinned": [],
+ "done": []
+}

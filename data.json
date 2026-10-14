@@ -1,5 +1,5 @@
 {
- "updated": "Oct 14, 2026, 6:03 PM ICT",
+ "updated": "Oct 14, 2026, 8:20 PM ICT",
  "status": "Active. Taxes are the top priority; CPA authorization forms signed; still waiting on the CPA.",
  "lanes": [
   {
@@ -71,7 +71,7 @@
   "Portfolio: review the allocation suggestion"
  ],
  "recent": [
-  "R66 Deck Launcher live with Folio Dashboard Details ready",
+  "Ready To Swipe shelf with five ready decks; Morning Report only; Routines at the bottom",
   "Icon row for dashboards; Routines section grouped by area",
   "Audit fixes: Share in header corner, bottom tabs removed",
   "Folio Dashboard Deck picks applied (one skip carried)",
@@ -89,13 +89,6 @@
    "schedule_plain": "Daily At 4:43 AM ICT",
    "status": "on",
    "last_run": "Today 4:52 AM"
-  },
-  {
-   "name": "Evening Report On Dashboard",
-   "group": "Reports",
-   "schedule_plain": "Daily At 6:00 PM ICT",
-   "status": "on",
-   "last_run": "Today 6:02 PM"
   },
   {
    "name": "200-Day Watchlist Buy Signals",
@@ -160,20 +153,13 @@
   }
  ],
  "report": {
-  "title": "Evening Report \u00b7 Wed Oct 14",
+  "title": "Morning Report \u00b7 Wed Oct 14",
   "morning": [
-   "Taxes: still waiting on the CPA's reply; top priority",
+   "Taxes: Max e-signed the federal CPA authorization forms; filed in the vault; still waiting on the CPA reply; top priority",
    "Portfolio: Roth and Kraken price refresh, plus the 200-day watchlist scan at 8:27",
-   "Cards: nothing due today or tomorrow; Amex Business Platinum is due Friday on autopay",
-   "Cards: Amex Delta was due yesterday on autopay; confirm it posted",
-   "Rentals: equity agreement questions still waiting on Max"
-  ],
-  "evening": [
-   "Taxes: Max e-signed the federal CPA authorization forms; filed in the vault; still waiting on the CPA reply",
-   "Dashboard: Folio Dashboard Deck picks applied (one typography skip carried); icon row, Routines section, Deck Launcher, and audit fixes live",
-   "Ready: Folio Dashboard Details deck is waiting in the launcher",
-   "Cards: nothing due tomorrow; Amex Business Platinum is due Friday on autopay; Amex Delta was due this week on autopay \u2014 confirm it posted",
-   "Tomorrow: tax filing deadline day with the CPA; Morning Report by 5:00; card due check at 7:58; Folio Dashboard Details ready to answer"
+   "Cards: Amex Business Platinum is due Friday on autopay; Amex Delta was due this week on autopay; confirm it posted",
+   "Rentals: equity agreement questions still waiting on Max",
+   "Ready To Swipe: five 20-card decks at the top (Dashboard, Markets, Spending, Thumbnail, Taxes)"
   ]
  },
  "decks": [

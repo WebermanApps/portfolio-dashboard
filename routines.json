@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-14 18:03 ICT",
+ "updated": "2026-10-14 20:20 ICT",
  "routines": [
   {
    "name": "Morning Report On Dashboard",
@@ -7,13 +7,6 @@
    "schedule_plain": "Daily At 4:43 AM ICT",
    "status": "on",
    "last_run": "Today 4:52 AM"
-  },
-  {
-   "name": "Evening Report On Dashboard",
-   "group": "Reports",
-   "schedule_plain": "Daily At 6:00 PM ICT",
-   "status": "on",
-   "last_run": "Today 6:02 PM"
   },
   {
    "name": "200-Day Watchlist Buy Signals",
