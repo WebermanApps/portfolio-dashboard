@@ -54,9 +54,13 @@ unfin=list(reversed(unfin))  # data.json append order = oldest→newest
 def drow(x):
     prog=f'{int(x.get("answered",0))} of {int(x.get("total",0))}'
     return f'<a class="drow mw-hover" href="{e(x["url"])}"><b>{e(x["name"])}</b><span class="dprog">{e(prog)}</span></a>'
-decks=('' if not unfin else
-  '<section class="decks-pin" aria-label="Decks To Finish"><h2>Decks To Finish</h2><div class="drows">'
-  +''.join(drow(x) for x in unfin)+'</div></section>')
+decks=''  # R66: unfinished decks now render inside the kit Deck Launcher (launcher.json), not as a separate pin
+# R66: sync unfinished (newest first) into launcher.json; keep agent/categories/ready as written
+try: LJ=json.load(open('launcher.json'))
+except Exception: LJ=None
+if LJ is not None:
+    LJ['unfinished']=[{'name':x['name'],'url':x['url'],'answered':int(x.get('answered',0)),'total':int(x.get('total',20))} for x in unfin]
+    json.dump(LJ,open('launcher.json','w'),indent=1)
 page=open('template.html').read()
 for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers

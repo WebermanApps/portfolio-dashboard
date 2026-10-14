@@ -1,0 +1,40 @@
+{
+ "agent": "portfolio",
+ "categories": [
+  {
+   "id": "dashboard",
+   "label": "Dashboard Deck",
+   "blurb": "Board layout, sections and cards"
+  },
+  {
+   "id": "markets",
+   "label": "Portfolio & Markets Deck",
+   "blurb": "Roth/Kraken slide, charts, watchlist look"
+  },
+  {
+   "id": "spending",
+   "label": "Spending Deck",
+   "blurb": "Category charts and spending page look"
+  },
+  {
+   "id": "thumbnail",
+   "label": "Thumbnail Deck",
+   "blurb": "More avatar options; growth-chart look favored"
+  },
+  {
+   "id": "taxes",
+   "label": "Taxes & Money Habits Deck",
+   "blurb": "Tax workflow and money habits UI"
+  }
+ ],
+ "unfinished": [],
+ "ready": {
+  "name": "Folio Dashboard Details",
+  "url": "https://webermanapps.github.io/style-swipe/folio-dashboard-details-vxmzcb/",
+  "total": 20,
+  "categories": [
+   "dashboard",
+   "thumbnail"
+  ]
+ }
+}
