@@ -1,6 +1,6 @@
 {
- "updated": "Oct 14, 2026, 3:21 PM ICT",
- "status": "Active. Taxes are the top priority; waiting on the CPA's reply.",
+ "updated": "Oct 14, 2026, 6:03 PM ICT",
+ "status": "Active. Taxes are the top priority; CPA authorization forms signed; still waiting on the CPA.",
  "lanes": [
   {
    "name": "Portfolio",
@@ -27,7 +27,7 @@
    "name": "Taxes",
    "icon": "doc",
    "status": "Waiting on Max",
-   "note": "CPA packet sent; next step needs a reply from Max.",
+   "note": "Federal e-sign forms filed; still waiting on the CPA.",
    "slug": "taxes"
   },
   {
@@ -71,16 +71,16 @@
   "Portfolio: review the allocation suggestion"
  ],
  "recent": [
+  "R66 Deck Launcher live with Folio Dashboard Details ready",
+  "Icon row for dashboards; Routines section grouped by area",
+  "Audit fixes: Share in header corner, bottom tabs removed",
+  "Folio Dashboard Deck picks applied (one skip carried)",
+  "Federal e-sign forms for the CPA filed in the tax vault",
   "Dashboards as an icon row; Routines section grouped by area",
   "R63 Decks To Finish pin + public report.json",
   "Layout picks applied: one-line report, decisions under it, compact rows",
   "My Apps row moved to the top",
-  "Dashboard style picks applied (tabs, color band, action tiles)",
-  "Pull-down-to-refresh on every Portfolio page",
-  "Warnings and Key News collapsed into one-line dropdowns",
-  "Apps Home link added top-left",
-  "Portfolio and Spending pages live behind the password",
-  "Renamed from Folio to Portfolio; now owns all financials, including taxes"
+  "Dashboard style picks applied (tabs, color band, action tiles)"
  ],
  "routines": [
   {
@@ -95,7 +95,7 @@
    "group": "Reports",
    "schedule_plain": "Daily At 6:00 PM ICT",
    "status": "on",
-   "last_run": "Oct 13, 6:01 PM"
+   "last_run": "Today 6:02 PM"
   },
   {
    "name": "200-Day Watchlist Buy Signals",
@@ -160,7 +160,7 @@
   }
  ],
  "report": {
-  "title": "Morning Report \u00b7 Wed Oct 14",
+  "title": "Evening Report \u00b7 Wed Oct 14",
   "morning": [
    "Taxes: still waiting on the CPA's reply; top priority",
    "Portfolio: Roth and Kraken price refresh, plus the 200-day watchlist scan at 8:27",
@@ -169,12 +169,11 @@
    "Rentals: equity agreement questions still waiting on Max"
   ],
   "evening": [
-   "Portfolio: prices refreshed this evening; Portfolio and Spending pages live behind the password",
-   "Spending: monthly totals, categories, merchants and work vs personal up to date through September",
-   "Dashboard: Max's layout picks applied (one-line report, decisions under it, compact rows, See All)",
-   "Cards: Amex Delta was due today on autopay; confirm it posted",
-   "Taxes: still waiting on the CPA's reply",
-   "Tomorrow: Morning Report by 5:00, card due check 7:58, Roth and Kraken refresh"
+   "Taxes: Max e-signed the federal CPA authorization forms; filed in the vault; still waiting on the CPA reply",
+   "Dashboard: Folio Dashboard Deck picks applied (one typography skip carried); icon row, Routines section, Deck Launcher, and audit fixes live",
+   "Ready: Folio Dashboard Details deck is waiting in the launcher",
+   "Cards: nothing due tomorrow; Amex Business Platinum is due Friday on autopay; Amex Delta was due this week on autopay \u2014 confirm it posted",
+   "Tomorrow: tax filing deadline day with the CPA; Morning Report by 5:00; card due check at 7:58; Folio Dashboard Details ready to answer"
   ]
  },
  "decks": [
