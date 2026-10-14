@@ -14,12 +14,13 @@ cls=lambda s:{'Done':'done','In Progress':'prog','Waiting on Max':'wait'}[s]
 pill=lambda s:f'<span class="pill {cls(s)}">{e(s)}</span>'
 def tile(l):
     live_t=live and l['slug'] in subdash.LIVE
-    inner=f'{ic(l["icon"])}<div class="tb"><h3>{e(l["name"])}</h3><p>{e(l["note"])}</p><div class="tf">{pill(l["status"])}<span class="lk">{ic("lock")}{"Private, Tap To Open" if live_t else "Locked, Setting Up"}</span></div></div>'
-    return f'<a class="card tile mw-hover" href="s/{l["slug"]}.html?v={V}">{inner}</a>' if live_t else f'<div class="card tile off" aria-disabled="true">{inner}</div>'
+    inner=f'{ic(l["icon"])}<span><b>{e(l["name"])}</b><small>{"Private, Tap To Unlock" if live_t else "Locked, Setting Up"}</small></span>{pill(l["status"])}<svg class="ic clk" viewBox="0 0 24 24" aria-label="Locked">{I["lock"]}</svg>'
+    return f'<a class="trow mw-hover" href="s/{l["slug"]}.html?v={V}">{inner}</a>' if live_t else f'<div class="trow off" aria-disabled="true">{inner}</div>'
 lanes=''.join(tile(l) for l in d['lanes'])
 h=datetime.datetime.now().hour
 rt=d.get('report',{}).get('title') or ('Morning Report' if h<12 else 'Evening Report')
 RI=d.get('report',{}).get('morning' if h<12 else 'evening',[])
+if not rt.startswith('Fresh Start'): rt=rt.replace('Morning Report','Evening Report') if h>=12 else rt.replace('Evening Report','Morning Report')
 TI={'Portfolio':('s/portfolio.html','chart'),'Spending':('s/spending.html','receipt'),'Finance Review':('https://github.com/WebermanApps/finance-review','doc')}
 def tileurl(x):
     for k,(u,i) in TI.items():
@@ -33,7 +34,8 @@ if rt.startswith('Fresh Start'):
         if m: tl+=f'<a class="fst-tile mw-hover" href="{e(m[1])}">{ic(m[2])}<b>{e(m[0])}</b><span>Ready now</span></a>'
     rep=f'<details class="alerts report fs1"><summary><span class="eyebrow">{e(rt)}</span> <span class="tag g">{len(rdy)} Ready</span> <span class="tag w">{len(wt)} Waiting</span></summary><div class="ai"><div class="fst-tiles">{tl}</div><ul class="wl">'+''.join(f'<li>Waiting on you: {e(x)}</li>' for x in wt)+'</ul></div></details>'
 else:
-    rep=f'<details class="alerts report"><summary><span class="eyebrow">{e(rt)}</span> <span class="tag">{len(RI)} Updates</span></summary><div class="ai"><ol class="ev">'+''.join(f'<li>{e(x)}</li>' for x in RI)+'</ol></div></details>'
+    rep=f'<section class="rep report" aria-label="{e(rt)}"><div class="eyebrow">{len(RI)} Updates</div><h3>{e(rt)}</h3><ol class="ev">'+''.join(f'<li>{e(x)}</li>' for x in RI)+'</ol></section>'
+GREET='Good Morning, Max' if h<12 else ('Good Afternoon, Max' if h<17 else 'Good Evening, Max')
 row=lambda t,right,det:f'<li><details><summary><span>{t}</span><span class="dt">{right}</span></summary><div class="det">{det}</div></details></li>'
 opn=''.join(row(e(o["t"]),pill(o["s"]),f'Status: {e(o["s"])}. Owner: Portfolio.') for o in d['open'])
 dec=''.join(row(e(x),pill("Waiting on Max"),'Needs your answer; Portfolio follows up once you reply.') for x in d['decisions'])
@@ -43,13 +45,13 @@ lnk=''.join(f'<a class="link mw-hover" href="{e(l["u"])}" target="_blank" rel="n
 MY=[('Portfolio',f's/portfolio.html?v={V}','chart','Private'),('Spending',f's/spending.html?v={V}','receipt','Private'),('Finance Review','https://github.com/WebermanApps/finance-review','doc','Private Repo')]
 myapps=''.join(f'<a class="app mw-hover" href="{e(u)}">{ic(i)}<b>{e(n)}</b><small>{e(s)}</small></a>' for n,u,i,s in MY)
 page=open('template.html').read()
-for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions']))).items(): page=page.replace('{{'+k+'}}',v)
+for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers
 if re.search(r'\$\s?\d|\d[\d,]*\.\d{2}\b|\b(?!20[0-9]{2}\b)\d{4,}\b|\d+(\.\d+)?\s?%|\d+k\b',re.sub(r'<[^>]+>','',re.sub(r'(?s)<(style|script|svg).*?</\1>','',page))):
     sys.exit('PRIVACY GUARD: possible figure found; not publishing')
 open('index.html','w').write(page)
 if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles
     live=True; lanes=''.join(tile(l) for l in d['lanes']); p=open('template.html').read()
-    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions']))).items(): p=p.replace('{{'+k+'}}',v)
+    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET).items(): p=p.replace('{{'+k+'}}',v)
     import shutil; open(subdash.PRIV+'/preview/index.html','w').write(p); shutil.copy('brand-tokens.css',subdash.PRIV+'/preview/')
 print('built',d['updated'],'| sub-dashboards:',state)
