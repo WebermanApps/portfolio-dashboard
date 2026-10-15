@@ -65,8 +65,26 @@ SH.setdefault('agent','portfolio'); SH.setdefault('decks',[]); SH.setdefault('do
 SH['pinned']=[{'name':x['name'],'url':x['url'],'answered':int(x.get('answered',0))} for x in unfin]
 SH['updated']=datetime.datetime.now().astimezone().isoformat(timespec='seconds')
 json.dump(SH,open('shelf.json','w'),indent=1)
+
+# Bills Calendar (names + due dates only; every date sourced from a file, est = projected)
+import calendar
+BL=d.get('bills',[]); _t=datetime.date.today()
+_ms=[(_t.year,_t.month),((_t.year+(_t.month==12)),(_t.month%12)+1)]
+def _bm(y,m):
+    cells=''.join('<div class="bc x"></div>' for _ in range(calendar.monthrange(y,m)[0]))
+    for dd in range(1,calendar.monthrange(y,m)[1]+1):
+        ds=f'{y:04d}-{m:02d}-{dd:02d}'; it=[x for x in BL if x['date']==ds]
+        tod=' today' if datetime.date(y,m,dd)==_t else ''
+        cells+=f'<div class="bc{tod}"><span class="bd">{dd}</span>'+''.join(f'<span class="bi k-{e(x["kind"])}{" est" if x["est"] else ""}" title="{e(x["name"])}{" (Estimated)" if x["est"] else ""}">{e(x["name"])}{"<i>Est.</i>" if x["est"] else ""}</span>' for x in it)+'</div>'
+    hd=''.join(f'<div class="bh">{w}</div>' for w in ('Mon','Tue','Wed','Thu','Fri','Sat','Sun'))
+    return f'<div class="bmon"><h3>{calendar.month_name[m]} {y}</h3><div class="bgrid">{hd}{cells}</div></div>'
+_inm=[x for x in BL if (int(x['date'][:4]),int(x['date'][5:7])) in _ms]
+_li=''.join(f'<li class="{"past" if x["date"]<_t.isoformat() else ""}"><span>{e(x["name"])}{" <i>Est.</i>" if x["est"] else ""}</span><span class="dt">{datetime.date.fromisoformat(x["date"]).strftime("%a %b %-d")}</span></li>' for x in _inm)
+_later=[x for x in BL if x['date']>f'{_ms[1][0]:04d}-{_ms[1][1]:02d}-31']
+_lt=(' <span class="blater">Later: '+' · '.join(f'{e(x["name"])} {datetime.date.fromisoformat(x["date"]).strftime("%b %-d")}' for x in _later)+'</span>') if _later else ''
+bills=f'<section id="bills" aria-label="Bills Calendar"><h2>Bills Calendar</h2><div class="blg"><span class="k-card bi">Card</span><span class="k-loan bi">Loan</span><span class="k-rent bi">Rent In</span><span class="k-ins bi">Insurance / Tax</span><span><i>Est.</i> = projected from last stated date</span></div><div class="bcal">{"".join(_bm(y,m) for y,m in _ms)}</div><ul class="blist">{_li}</ul><p class="bnote">Names and due dates only.{_lt}</p></section>'
 page=open('template.html').read()
-for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks).items(): page=page.replace('{{'+k+'}}',v)
+for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks,BILLS=bills).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers
 if re.search(r'\$\s?\d|\d[\d,]*\.\d{2}\b|\b(?!20[0-9]{2}\b)\d{4,}\b|\d+(\.\d+)?\s?%|\d+k\b',re.sub(r'<[^>]+>','',re.sub(r'(?s)<(style|script|svg).*?</\1>','',page))):
     sys.exit('PRIVACY GUARD: possible figure found; not publishing')
@@ -82,6 +100,6 @@ json.dump({'type':_rtype,'posted_at':_now.strftime('%Y-%m-%dT%H:%M:%S+07:00'),'p
 
 if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles
     live=True; lanes=''.join(tile(l) for l in d['lanes']); p=open('template.html').read()
-    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks).items(): p=p.replace('{{'+k+'}}',v)
+    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks,BILLS=bills).items(): p=p.replace('{{'+k+'}}',v)
     import shutil; open(subdash.PRIV+'/preview/index.html','w').write(p); shutil.copy('brand-tokens.css',subdash.PRIV+'/preview/')
 print('built',d['updated'],'| sub-dashboards:',state)

@@ -131,6 +131,17 @@ a.itile:hover b{text-decoration:underline}
 @media(min-width:900px){.irow{grid-template-columns:repeat(6,1fr)}.itile{min-height:132px}.itile b{font-size:20px}}
 @media(min-width:1600px){.itile{min-height:160px}.itile .ib{width:56px;height:56px}.itile .ib .ic{width:30px;height:30px}.itile b{font-size:24px}.itile .pill{font-size:12px}}
 @media(min-width:2000px){.itile{min-height:180px}.itile b{font-size:28px}}
+#bills{margin-top:8px}.bcal{display:grid;grid-template-columns:1fr 1fr;gap:20px}.bmon h3{font-size:18px;margin:0 0 8px}
+.bgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid var(--mw-border);border-radius:12px;overflow:hidden;background:#fff}
+.bh{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mw-muted-text);padding:6px;border-bottom:1px solid var(--mw-border);background:#faf8f3}
+.bc{min-height:76px;padding:4px;border-top:1px solid #f0ece4;border-left:1px solid #f0ece4;min-width:0;display:flex;flex-direction:column;gap:2px}.bc.x{background:#faf8f3}.bc.today{background:#fff4ee;box-shadow:inset 0 0 0 2px #C1502E}
+.bd{font-size:12px;color:#525252;font-weight:600}.bi{display:block;font-size:11px;line-height:1.25;padding:2px 5px;border-radius:5px;overflow-wrap:anywhere;white-space:normal;background:#f5f5f5;color:#262626}
+.bi i,.blist i,.blg i{font-style:normal;font-size:10px;color:#b45309;margin-left:4px;font-weight:600}.bi.est{border:1px dashed #d4a373}
+.k-card{background:#eef2ff;color:#3730a3}.k-loan{background:#fff7ed;color:#9a3412}.k-rent{background:#ecfdf5;color:#047857}.k-ins,.k-tax{background:#f5f3ff;color:#6d28d9}
+.blg{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;margin-bottom:10px;color:#525252}.blg .bi{display:inline-block}
+.blist{display:none}.blist li.past{opacity:.55}.bnote{font-size:12px;color:var(--mw-muted-text);margin:8px 0 0}
+@media(min-width:1800px){.bc{min-height:92px}.bi{font-size:12px}}
+@media(max-width:760px){.bcal{display:none}.blist{display:block}.blist li{font-size:14px}}
 #routines{margin-top:8px}
 </style><script src="ptr.js" defer></script><style>header{position:relative}.shareTop{position:absolute;top:8px;right:0;min-height:44px;padding:8px 14px!important;font-size:14px!important}.home{font-size:13px!important}.upd,.m,.app small,.itile .pill,.eyebrow{font-size:max(13px,1em)}.itile .pill,.app small{font-size:13px}.wrap{padding-bottom:24px!important}body{padding-bottom:0!important;background:#FDFBF6}.ds-tag,.tag,.pill,.s5more,.rt-st,.rt-meta,.itile .pill,.app small{font-size:13px!important}.itile{min-width:0;overflow:hidden}.itile b{overflow-wrap:anywhere}.itile .pill{white-space:normal;text-align:center;max-width:100%}</style></head><body><div class="wrap">
 <header><button class="btn mw-hover shareTop" id="share">{{SHARE}}Share</button><a class="eyebrow home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/" style="display:inline-flex;align-items:center;min-height:44px;min-width:44px;text-decoration:none;color:inherit">Apps Home</a><div class="greet">{{GREET}}</div><h1>Portfolio</h1><div class="rule"></div><div class="upd">Command Center · Updated {{UPDATED}}</div></header>
@@ -141,6 +152,7 @@ a.itile:hover b{text-decoration:underline}
 <div class="cols"><section><h2>Open Items</h2><ul class="rows s5">{{OPEN}}</ul></section>
 <section><h2>Recent Work</h2><ul class="rows s5">{{REC}}</ul></section></div>
 </div>
+{{BILLS}}
 <section data-routines="routines.json" id="routines"></section><script src="https://webermanapps.github.io/style-swipe/kit/routines-section.js?v=2" defer></script>
 <footer><a href="https://maxweberman.com" target="_blank" rel="noopener" style="color:inherit;display:inline-flex;align-items:center;min-height:44px">Built by Max Weberman</a></footer></div><div class="toast" id="t">Link Copied</div>
 <script>document.getElementById('share').onclick=async()=>{const u=location.href;try{if(navigator.share){await navigator.share({title:'Portfolio Command Center',url:u});return}}catch(e){return}try{await navigator.clipboard.writeText(u)}catch(e){}const t=document.getElementById('t');t.style.display='block';setTimeout(()=>t.style.display='none',1600)}</script>
