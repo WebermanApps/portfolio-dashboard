@@ -1,6 +1,6 @@
 # Portfolio deck submissions (R66 Ready To Swipe)
 
-The top of the Portfolio dashboard shows the **Ready To Swipe** shelf (kit `deck-shelf.js?v=2`) from `shelf.json`:
+The top of the Portfolio dashboard shows the **Ready To Swipe** shelf (kit `deck-shelf.js?v=4`) from `shelf.json`:
 up to 5 ready 20-card decks plus any pinned unfinished decks (`pinned`, synced from `data.json` decks by `build.py`), 5 total max.
 Agent id is `portfolio` (must match the submit agent so swipe counts show).
 

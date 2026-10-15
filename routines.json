@@ -1,12 +1,12 @@
 {
- "updated": "2026-10-14 20:20 ICT",
+ "updated": "2026-10-15 08:32 ICT",
  "routines": [
   {
    "name": "Morning Report On Dashboard",
    "group": "Reports",
    "schedule_plain": "Daily At 4:43 AM ICT",
    "status": "on",
-   "last_run": "Today 4:52 AM"
+   "last_run": "Today 4:46 AM (failed; posted late)"
   },
   {
    "name": "200-Day Watchlist Buy Signals",
@@ -26,7 +26,8 @@
    "name": "Sunday Portfolio Review",
    "group": "Markets",
    "schedule_plain": "Sundays At 9:01 AM ICT",
-   "status": "on"
+   "status": "on",
+   "last_run": "Not Run Yet"
   },
   {
    "name": "Card Due Alerts",
@@ -60,7 +61,8 @@
    "name": "Mellow Wood Rent Check",
    "group": "Property",
    "schedule_plain": "2nd Of Each Month At 8:39 AM ICT",
-   "status": "on"
+   "status": "on",
+   "last_run": "Not Run Yet"
   }
  ]
 }

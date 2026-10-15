@@ -1,10 +1,10 @@
 {
  "agent": "portfolio",
- "updated": "2026-10-14T20:20:32+07:00",
+ "updated": "2026-10-15T08:32:05+07:00",
  "decks": [
   {
    "id": "folio-dashboard-2",
-   "name": "Folio Dashboard Details",
+   "name": "Dashboard Details",
    "url": "https://webermanapps.github.io/style-swipe/folio-dashboard-details-vxmzcb/",
    "total": 20,
    "topic": "dashboards",
@@ -14,7 +14,7 @@
   },
   {
    "id": "portfolio-markets-portfolio-and-markets-deck",
-   "name": "Portfolio And Markets Deck",
+   "name": "Portfolio And Markets",
    "url": "https://webermanapps.github.io/style-swipe/portfolio-markets-portfolio-and-markets-deck-hgqzmf/",
    "total": 20,
    "topic": "portfolio-markets",
@@ -25,7 +25,7 @@
   },
   {
    "id": "portfolio-spending-spending-deck",
-   "name": "Spending Deck",
+   "name": "Spending Habits",
    "url": "https://webermanapps.github.io/style-swipe/portfolio-spending-spending-deck-llxfrp/",
    "total": 20,
    "topic": "portfolio-spending",
@@ -36,7 +36,7 @@
   },
   {
    "id": "portfolio-thumbnail-thumbnail-deck",
-   "name": "Thumbnail Deck",
+   "name": "Thumbnail Options",
    "url": "https://webermanapps.github.io/style-swipe/portfolio-thumbnail-thumbnail-deck-qxl4vg/",
    "total": 20,
    "topic": "portfolio-thumbnail",
@@ -47,7 +47,7 @@
   },
   {
    "id": "portfolio-taxes-taxes-and-money-habits-deck",
-   "name": "Taxes And Money Habits Deck",
+   "name": "Taxes And Money Habits",
    "url": "https://webermanapps.github.io/style-swipe/portfolio-taxes-taxes-and-money-habits-deck-ak99mf/",
    "total": 20,
    "topic": "portfolio-taxes",

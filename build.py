@@ -78,7 +78,7 @@ _now=datetime.datetime.now()
 _rtype=os.environ.get('PORTFOLIO_REPORT_TYPE') or 'Morning Report'
 if 'Evening' in _rtype: _rtype='Morning Report'
 if 'Morning' not in _rtype and not _rtype.startswith('Fresh'): _rtype='Morning Report'
-json.dump({'type':_rtype,'posted_at':_now.strftime('%Y-%m-%dT%H:%M:%S+07:00'),'posted_ict':_now.strftime('%b %-d, %Y, %-I:%M %p ICT')},open('report.json','w'),indent=1)
+json.dump({'type':_rtype,'posted_at':_now.strftime('%Y-%m-%dT%H:%M:%S+07:00'),'posted_ict':_now.strftime('%b %-d, %Y, %-I:%M %p ICT'),'late':(_now.hour,_now.minute)>(5,0)},open('report.json','w'),indent=1)
 
 if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles
     live=True; lanes=''.join(tile(l) for l in d['lanes']); p=open('template.html').read()

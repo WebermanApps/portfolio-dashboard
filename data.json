@@ -1,5 +1,5 @@
 {
- "updated": "Oct 14, 2026, 8:20 PM ICT",
+ "updated": "Oct 15, 2026, 8:32 AM ICT",
  "status": "Active. Taxes are the top priority; CPA authorization forms signed; still waiting on the CPA.",
  "lanes": [
   {
@@ -71,6 +71,7 @@
   "Portfolio: review the allocation suggestion"
  ],
  "recent": [
+  "Oct 15 Morning Report (late) and close-of-night check: Ready To Swipe kit refresh, Routines updated",
   "Ready To Swipe shelf with five ready decks; Morning Report only; Routines at the bottom",
   "Icon row for dashboards; Routines section grouped by area",
   "Audit fixes: Share in header corner, bottom tabs removed",
@@ -79,8 +80,7 @@
   "Dashboards as an icon row; Routines section grouped by area",
   "R63 Decks To Finish pin + public report.json",
   "Layout picks applied: one-line report, decisions under it, compact rows",
-  "My Apps row moved to the top",
-  "Dashboard style picks applied (tabs, color band, action tiles)"
+  "My Apps row moved to the top"
  ],
  "routines": [
   {
@@ -88,7 +88,7 @@
    "group": "Reports",
    "schedule_plain": "Daily At 4:43 AM ICT",
    "status": "on",
-   "last_run": "Today 4:52 AM"
+   "last_run": "Today 4:46 AM (failed; posted late)"
   },
   {
    "name": "200-Day Watchlist Buy Signals",
@@ -108,7 +108,8 @@
    "name": "Sunday Portfolio Review",
    "group": "Markets",
    "schedule_plain": "Sundays At 9:01 AM ICT",
-   "status": "on"
+   "status": "on",
+   "last_run": "Not Run Yet"
   },
   {
    "name": "Card Due Alerts",
@@ -142,7 +143,8 @@
    "name": "Mellow Wood Rent Check",
    "group": "Property",
    "schedule_plain": "2nd Of Each Month At 8:39 AM ICT",
-   "status": "on"
+   "status": "on",
+   "last_run": "Not Run Yet"
   }
  ],
  "links": [
@@ -153,11 +155,12 @@
   }
  ],
  "report": {
-  "title": "Morning Report \u00b7 Wed Oct 14",
+  "title": "Morning Report \u00b7 Thu Oct 15",
   "morning": [
-   "Taxes: Max e-signed the federal CPA authorization forms; filed in the vault; still waiting on the CPA reply; top priority",
-   "Portfolio: Roth and Kraken price refresh, plus the 200-day watchlist scan at 8:27",
-   "Cards: Amex Business Platinum is due Friday on autopay; Amex Delta was due this week on autopay; confirm it posted",
+   "Posted late: the 4:46 AM routine failed when usage ran out overnight",
+   "Taxes: still waiting on the CPA reply after the federal authorization e-sign; top priority today",
+   "Portfolio: 200-day watchlist scan ran at 8:27; Roth and Kraken price refresh next",
+   "Cards: Amex Business Platinum due Friday on autopay; confirm the Amex Delta payment posted",
    "Rentals: equity agreement questions still waiting on Max",
    "Ready To Swipe: five 20-card decks at the top (Dashboard, Markets, Spending, Thumbnail, Taxes)"
   ]
