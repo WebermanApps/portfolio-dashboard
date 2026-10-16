@@ -1,17 +1,7 @@
 {
  "agent": "portfolio",
- "updated": "2026-10-15T15:34:19+07:00",
+ "updated": "2026-10-16T23:30:00+07:00",
  "decks": [
-  {
-   "id": "folio-dashboard-2",
-   "name": "Dashboard Details",
-   "url": "https://webermanapps.github.io/style-swipe/folio-dashboard-details-vxmzcb/",
-   "total": 20,
-   "topic": "dashboards",
-   "tag": "Dashboard",
-   "added": "2026-10-14T20:16:17+07:00",
-   "blurb": "20 cards, board layout and section details"
-  },
   {
    "id": "portfolio-markets-portfolio-and-markets-deck",
    "name": "Portfolio And Markets",
@@ -58,5 +48,19 @@
   }
  ],
  "pinned": [],
- "done": []
+ "done": [],
+ "unlisted": [
+  {
+   "id": "folio-dashboard-2",
+   "name": "Dashboard Details",
+   "url": "https://webermanapps.github.io/style-swipe/folio-dashboard-details-vxmzcb/",
+   "total": 20,
+   "topic": "dashboards",
+   "tag": "Dashboard",
+   "added": "2026-10-14T20:16:17+07:00",
+   "blurb": "20 cards, board layout and section details",
+   "unlisted_from": "decks",
+   "unlisted_note": "Dashboard deck unlisted (Max Oct 16 2026 23:19 ICT: no dashboard decks unless he asks). Deck files/pages/votes kept."
+  }
+ ]
 }
