@@ -1,6 +1,6 @@
 {
  "agent": "portfolio",
- "updated": "2026-10-17T08:05:35+07:00",
+ "updated": "2026-10-17T09:55:08+07:00",
  "decks": [
   {
    "id": "portfolio-markets-portfolio-and-markets-deck-target-mix",
@@ -104,6 +104,26 @@
    "tag": "Taxes",
    "answered": 0,
    "split_from": "portfolio-taxes-taxes-and-money-habits-deck",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "portfolio-from-the-feed-deck",
+   "name": "From The Feed Deck",
+   "url": "https://webermanapps.github.io/style-swipe/portfolio-from-the-feed-deck-b9mxah/",
+   "total": 10,
+   "topic": "portfolio",
+   "added": "2026-10-17T09:47:19+07:00",
+   "tag": "From The Feed",
+   "blurb": "10 cards, ready now"
+  },
+  {
+   "id": "portfolio-decisions-deck",
+   "name": "Decisions Deck",
+   "url": "https://webermanapps.github.io/style-swipe/portfolio-decisions-deck-a9ultr/",
+   "total": 10,
+   "topic": "portfolio",
+   "added": "2026-10-17T09:47:33+07:00",
+   "tag": "Decisions",
    "blurb": "10 cards, ready now"
   }
  ],
