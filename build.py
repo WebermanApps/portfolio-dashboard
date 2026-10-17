@@ -44,6 +44,11 @@ row=lambda t,right,det:f'<li><details><summary><span>{t}</span><span class="dt">
 opn=''.join(row(e(o["t"]),pill(o["s"]),f'Status: {e(o["s"])}. Owner: Portfolio.') for o in d['open'])
 dec=''.join(row(e(x),pill("Waiting on Max"),'Needs your answer; Portfolio follows up once you reply.') for x in d['decisions'])
 rec=''.join(row(e(x),'Oct 13',e(x)) for x in d['recent'])
+# R106 (Max Oct 17 2026): To-Do List fold-down, closed by default, directly under the Morning Report. Names + statuses only (no figures).
+# Exactly one block carries data-mw-slot="todo"; the shared kit (mw-layout.js) moves it into the branded header. Source: data.json "todo".
+TD=d.get('todo',[])
+todo=(f'<details class="alerts todo" id="todos" data-mw-slot="todo" data-mw-todo-title="To-Do List" data-mw-todo-count="{len(TD)}"><summary><span class="eyebrow">To-Do List</span> <span class="tag w">{len(TD)} Open</span></summary><div class="ai"><ul class="rows">'
+      +''.join(row(e(x["t"]),pill(x["s"]),(e(x["det"])+' ' if x.get("det") else '')+f'Status: {e(x["s"])}. Owner: Portfolio.') for x in TD)+'</ul></div></details>') if TD else ''
 rou=''  # R65: Routines now render from routines.json via the shared kit component
 # R65 routines.json (names, groups, ICT schedules only; no figures, no secrets)
 json.dump({'updated':datetime.datetime.now().strftime('%Y-%m-%d %H:%M ICT'),'routines':[{k:r[k] for k in ('name','group','schedule_plain','status','last_run') if r.get(k)} for r in d['routines']]},open('routines.json','w'),indent=1)
@@ -84,7 +89,7 @@ _later=[x for x in BL if x['date']>f'{_ms[1][0]:04d}-{_ms[1][1]:02d}-31']
 _lt=(' <span class="blater">Later: '+' · '.join(f'{e(x["name"])} {datetime.date.fromisoformat(x["date"]).strftime("%b %-d")}' for x in _later)+'</span>') if _later else ''
 bills=f'<section id="bills" aria-label="Bills Calendar"><h2>Bills Calendar</h2><div class="blg"><span class="k-card bi">Card</span><span class="k-loan bi">Loan</span><span class="k-rent bi">Rent In</span><span class="k-ins bi">Insurance / Tax</span><span><i>Est.</i> = projected from last stated date</span></div><div class="bcal">{"".join(_bm(y,m) for y,m in _ms)}</div><ul class="blist">{_li}</ul><p class="bnote">Names and due dates only.{_lt}</p></section>'
 page=open('template.html').read()
-for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks,BILLS=bills).items(): page=page.replace('{{'+k+'}}',v)
+for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks,BILLS=bills,TODO=todo).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers
 if re.search(r'\$\s?\d|\d[\d,]*\.\d{2}\b|\b(?!20[0-9]{2}\b)\d{4,}\b|\d+(\.\d+)?\s?%|\d+k\b',re.sub(r'<[^>]+>','',re.sub(r'(?s)<(style|script|svg).*?</\1>','',page))):
     sys.exit('PRIVACY GUARD: possible figure found; not publishing')
@@ -100,6 +105,6 @@ json.dump({'type':_rtype,'posted_at':_now.strftime('%Y-%m-%dT%H:%M:%S+07:00'),'p
 
 if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles
     live=True; lanes=''.join(tile(l) for l in d['lanes']); p=open('template.html').read()
-    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks,BILLS=bills).items(): p=p.replace('{{'+k+'}}',v)
+    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks,BILLS=bills,TODO=todo).items(): p=p.replace('{{'+k+'}}',v)
     import shutil; open(subdash.PRIV+'/preview/index.html','w').write(p); shutil.copy('brand-tokens.css',subdash.PRIV+'/preview/')
 print('built',d['updated'],'| sub-dashboards:',state)

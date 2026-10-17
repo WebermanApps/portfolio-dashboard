@@ -2,7 +2,7 @@
 <title>Portfolio Command Center</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Khand:wght@600;700&family=Hind:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="brand-tokens.css">
-<link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/deck-shelf.css?v=ly12"><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/routines-section.css?v=2"><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/dash-theme.css?v=cc6">
+<link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/deck-shelf.css?v=ly12"><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/routines-section.css?v=4"><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/dash-theme.css?v=cc6">
 <style>
 *{box-sizing:border-box}body{margin:0;background:#fff;color:var(--mw-foreground);font-family:var(--mw-font-body);line-height:1.5}
 .wrap{max-width:1120px;margin:0 auto;padding:20px 16px 40px}
@@ -143,11 +143,13 @@ a.itile:hover b{text-decoration:underline}
 @media(min-width:1800px){.bc{min-height:92px}.bi{font-size:12px}}
 @media(max-width:760px){.bcal{display:none}.blist{display:block}.blist li{font-size:14px}}
 #routines{margin-top:20px}
-</style><script src="ptr.js" defer></script><style>header{position:relative}.shareTop{position:absolute;top:8px;right:0;min-height:44px;padding:8px 14px!important;font-size:14px!important}.home{font-size:13px!important}.upd,.m,.app small,.itile .pill,.eyebrow{font-size:max(13px,1em)}.itile .pill,.app small{font-size:13px}.wrap{padding-bottom:24px!important}body{padding-bottom:0!important;background:#fff}html{overflow-x:hidden}.mw-sections h2{margin-top:0}.mw-cc-header .greet,.mw-cc-header .upd{margin:2px 0 0}.ds-tag,.tag,.pill,.s5more,.rt-st,.rt-meta,.itile .pill,.app small{font-size:13px!important}.itile{min-width:0;overflow:hidden}.itile b{overflow-wrap:anywhere}.itile .pill{white-space:normal;text-align:center;max-width:100%}</style></head><body><div class="wrap">
+</style><script src="ptr.js" defer></script><style>header{position:relative}.shareTop{position:absolute;top:8px;right:0;min-height:44px;padding:8px 14px!important;font-size:14px!important}.home{font-size:13px!important}.upd,.m,.app small,.itile .pill,.eyebrow{font-size:max(13px,1em)}.itile .pill,.app small{font-size:13px}.wrap{padding-bottom:24px!important}body{padding-bottom:0!important;background:#fff}html{overflow-x:hidden}.mw-sections h2{margin-top:0}.mw-cc-header .greet,.mw-cc-header .upd{margin:2px 0 0}.ds-tag,.tag,.pill,.s5more,.rt-st,.rt-meta,.itile .pill,.app small{font-size:13px!important}.itile{min-width:0;overflow:hidden}.itile b{overflow-wrap:anywhere}.itile .pill{white-space:normal;text-align:center;max-width:100%}</style><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/mw-layout.css?v=ly12"><script src="https://webermanapps.github.io/style-swipe/kit/mw-layout.js?v=ly12" defer></script><link rel="stylesheet" href="https://webermanapps.github.io/style-swipe/kit/projects.css?v=op4">
+</head><body><section id="mw-projects" data-mw-projects="projects.json" aria-label="Document Center"><p class="op-empty">Loading documents</p></section>
+<div class="wrap">
 <main class="mw-sections">
 <header class="mw-cc-header"><div class="mw-cc-logo" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" stroke="#2B2B2B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14 H19 L22 18 H6 Z" fill="#C1502E"/><path d="M6 14 H19 L22 18 H42 V38 H6 Z"/><path d="M11 33 L19 26 L25 29 L36 21 M31 21 H36 V26"/></svg></div><div class="mw-cc-text"><a class="eyebrow home mw-hover" href="https://webermanapps.github.io/a-o956qercs5ubd57y/" style="display:inline-flex;align-items:center;min-height:44px;min-width:44px;text-decoration:none;color:inherit">Apps Home</a><h1 class="mw-cc-title">Portfolio Command Center</h1><p class="mw-cc-desc">Max&#x27;s investment portfolio, positions, P&amp;L and decisions</p><div class="upd">{{GREET}} · Updated {{UPDATED}}</div></div></header>
 <section data-shelf="shelf.json"></section>
-<section>{{REPORT}}<div class="urg"><details class="alerts dec"><summary><span class="tag r">{{NDEC}} Decisions</span> <span class="dech">Waiting On Max</span></summary><div class="ai"><ul class="rows">{{DEC}}</ul></div></details><details class="alerts"><summary><span class="tag w">1 Watch Item</span> Status</summary><div class="ai"><div>{{STATUS}}</div></div></details></div></section>
+<section>{{REPORT}}{{TODO}}<div class="urg"><details class="alerts dec"><summary><span class="tag r">{{NDEC}} Decisions</span> <span class="dech">Waiting On Max</span></summary><div class="ai"><ul class="rows">{{DEC}}</ul></div></details><details class="alerts"><summary><span class="tag w">1 Watch Item</span> Status</summary><div class="ai"><div>{{STATUS}}</div></div></details></div></section>
 <section><h2>Dashboards</h2><div class="irow">{{LANES}}</div></section>
 <section class="myapps"><h2>My Apps</h2><div class="apps3">{{MYAPPS}}</div></section>
 <section class="board">
@@ -155,11 +157,76 @@ a.itile:hover b{text-decoration:underline}
 <section><h2>Recent Work</h2><ul class="rows s5">{{REC}}</ul></section></div>
 </section>
 {{BILLS}}
-<footer class="mw-footer"><div class="mw-footer-bar"><a href="https://maxweberman.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px"><span class="mw-machan" style="display:inline-flex;align-items:center;gap:6px;vertical-align:middle;white-space:nowrap"><svg class="mw-machan-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" style="display:block;flex:none;width:22px;height:22px"><path d="M12 5.2C11.2 3 9.4 2 7.6 2.3c.3 1.9 1.9 3.2 4.4 2.9z" fill="#3F7D58"/><path d="M12 5.2c.8-2.2 2.6-3.2 4.4-2.9-.3 1.9-1.9 3.2-4.4 2.9z" fill="#5E9A6E"/><rect x="3.5" y="5.5" width="17" height="16" rx="7" fill="#C8643F"/><rect x="5.5" y="9" width="13" height="10" rx="5" fill="#FAF6EE"/><circle cx="9.6" cy="13.3" r="1.35" fill="#2E6F86"/><circle cx="14.4" cy="13.3" r="1.35" fill="#2E6F86"/><path d="M10.6 16.1q1.4 1.1 2.8 0" fill="none" stroke="#C8643F" stroke-width="1.1" stroke-linecap="round"/><circle cx="7.6" cy="15.6" r=".9" fill="#E9B9A3"/><circle cx="16.4" cy="15.6" r=".9" fill="#E9B9A3"/></svg>Built by Machan</span></a><button class="btn mw-hover" id="share">{{SHARE}}Share</button></div><section data-routines="routines.json" id="routines"></section><script src="https://webermanapps.github.io/style-swipe/kit/routines-section.js?v=2" defer></script></footer>
+<footer class="mw-footer"><div class="mw-footer-bar"><a href="https://maxweberman.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:44px"><span class="mw-machan" style="display:inline-flex;align-items:center;gap:6px;vertical-align:middle;white-space:nowrap"><svg class="mw-machan-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false" style="display:block;flex:none;width:22px;height:22px"><path d="M12 5.2C11.2 3 9.4 2 7.6 2.3c.3 1.9 1.9 3.2 4.4 2.9z" fill="#3F7D58"/><path d="M12 5.2c.8-2.2 2.6-3.2 4.4-2.9-.3 1.9-1.9 3.2-4.4 2.9z" fill="#5E9A6E"/><rect x="3.5" y="5.5" width="17" height="16" rx="7" fill="#C8643F"/><rect x="5.5" y="9" width="13" height="10" rx="5" fill="#FAF6EE"/><circle cx="9.6" cy="13.3" r="1.35" fill="#2E6F86"/><circle cx="14.4" cy="13.3" r="1.35" fill="#2E6F86"/><path d="M10.6 16.1q1.4 1.1 2.8 0" fill="none" stroke="#C8643F" stroke-width="1.1" stroke-linecap="round"/><circle cx="7.6" cy="15.6" r=".9" fill="#E9B9A3"/><circle cx="16.4" cy="15.6" r=".9" fill="#E9B9A3"/></svg>Built by Machan</span></a><button class="btn mw-hover" id="share">{{SHARE}}Share</button></div><section data-routines="routines.json" id="routines"></section><script src="https://webermanapps.github.io/style-swipe/kit/routines-section.js?v=4" defer></script></footer>
 </main></div><script src="https://webermanapps.github.io/style-swipe/submit.js" defer></script><script src="https://webermanapps.github.io/style-swipe/kit/deck-shelf.js?v=ly12" defer></script><div class="toast" id="t">Link Copied</div>
 <script>document.getElementById('share').onclick=async()=>{const u=location.href;try{if(navigator.share){await navigator.share({title:'Portfolio Command Center',url:u});return}}catch(e){return}try{await navigator.clipboard.writeText(u)}catch(e){}const t=document.getElementById('t');t.style.display='block';setTimeout(()=>t.style.display='none',1600)}</script>
 <script>/* cache-buster: if this copy is older than the live one, reload the fresh page */
 (function(){var me=document.querySelector('meta[name=build]').content;if('serviceWorker' in navigator&&navigator.serviceWorker.getRegistrations)navigator.serviceWorker.getRegistrations().then(function(r){r.forEach(function(x){x.unregister()})});
 fetch('./?nocache='+Date.now(),{cache:'no-store'}).then(function(r){return r.text()}).then(function(h){var m=h.match(/name="build" content="(\d+)"/);if(m&&m[1]>me)location.replace('./?v='+m[1])}).catch(function(){})})();
 </script><script>(function(){var h=document.querySelector('header'),m=document.querySelector('.mini');if(!h||!m)return;new IntersectionObserver(function(e){m.classList.toggle('on',!e[0].isIntersecting)}).observe(h)})();
-function s5(root){(root||document).querySelectorAll('.s5').forEach(function(el){if(el.dataset.s5)return;el.dataset.s5=1;var rows=el.tagName=='TABLE'?[].slice.call(el.querySelectorAll('tr')).filter(function(r){return !r.querySelector('th')&&!r.classList.contains('tot')}):[].slice.call(el.children);if(rows.length<=5)return;rows.slice(5).forEach(function(r){r.hidden=true});var b=document.createElement('button');b.className='s5more mw-hover';b.type='button';b.setAttribute('aria-expanded','false');b.textContent='See All '+rows.length;b.onclick=function(){var o=b.getAttribute('aria-expanded')=='true';rows.slice(5).forEach(function(r){r.hidden=o});b.setAttribute('aria-expanded',String(!o));b.textContent=o?'See All '+rows.length:'Show Five'};(el.closest('.tw')||el).after(b)})}s5();</script></body></html>
+function s5(root){(root||document).querySelectorAll('.s5').forEach(function(el){if(el.dataset.s5)return;el.dataset.s5=1;var rows=el.tagName=='TABLE'?[].slice.call(el.querySelectorAll('tr')).filter(function(r){return !r.querySelector('th')&&!r.classList.contains('tot')}):[].slice.call(el.children);if(rows.length<=5)return;rows.slice(5).forEach(function(r){r.hidden=true});var b=document.createElement('button');b.className='s5more mw-hover';b.type='button';b.setAttribute('aria-expanded','false');b.textContent='See All '+rows.length;b.onclick=function(){var o=b.getAttribute('aria-expanded')=='true';rows.slice(5).forEach(function(r){r.hidden=o});b.setAttribute('aria-expanded',String(!o));b.textContent=o?'See All '+rows.length:'Show Five'};(el.closest('.tw')||el).after(b)})}s5();</script><script src="https://webermanapps.github.io/style-swipe/kit/mw-chat.js?v=cc8" data-agent-id="cbf1a856-abbb-410a-99a0-cb65d213fc21" data-agent-name="Portfolio Agent" defer></script>
+<!-- R100 Document Center: kit projects.js/.css pinned ?v=op4 (Security condition 8) + Security enc_file_viewer.js (inlined verbatim, per ops/team-sync/handoffs/encrypted-files.md) -->
+<script id="mw-enc-viewer">
+/* enc_file_viewer.js: inline this in a locked dashboard page (inside a <script> tag, no external libs).
+   Links:   <a href="#" data-enc-file="files/xxxxxxxxxxxx.enc">Title</a>       open: PDF/images/text in a new tab, office files download
+            <a href="#" data-enc-file="files/x.enc" data-enc-download>Download</a>   always download
+   Images:  <img data-enc-img="files/yyyyyyyyyyyy.enc" alt="...">               decrypted and set as blob: src
+   Key: the raw main key the gate remembers in localStorage['mwPagesKey'] (base64 of the PBKDF2 output).
+   Files are made with /workspace/security/pagelock/encrypt_file.py (format MWENC1).
+   STAGED (Branding R109 add-on / kit projects.js op8, Oct 17 2026, NEEDS SECURITY REVIEW): if the page registers window.mwEncView (the kit
+   Document Center does), Open links hand ONLY {url: the blob: URL, mime} plus the clicked link to it, so the kit can show the doc in its
+   in-page view with a 'Note to <owner>' box. The hook never gets the bytes, name, size or key. No new tab is opened in that case; if the hook
+   declines (returns anything but true) or the type is not inline, the file downloads as before. Pages without the hook behave exactly as before. */
+(()=>{
+const K='mwPagesKey',MAGIC='MWENC1\n',u=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0)),cache=new Map();
+const INLINE=/^(application\/pdf|image\/|text\/plain|video\/|audio\/)/;
+function toast(msg){let t=document.getElementById('mw-enc-toast');if(!t){t=document.createElement('div');t.id='mw-enc-toast';t.setAttribute('role','alert');
+t.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1a1a1a;color:#fff;padding:12px 18px;font:15px system-ui,sans-serif;z-index:2147483647;max-width:90vw;text-align:center';document.body.appendChild(t)}
+t.textContent=msg;t.hidden=false;clearTimeout(t._h);t._h=setTimeout(()=>{t.hidden=true},4000)}
+class NoKey extends Error{}
+async function aes(key,iv,data,aad){const p={name:'AES-GCM',iv};if(aad)p.additionalData=aad;return new Uint8Array(await crypto.subtle.decrypt(p,key,data))}
+async function mainKey(){const s=localStorage.getItem(K);if(!s)throw new NoKey();return crypto.subtle.importKey('raw',u(s),'AES-GCM',false,['decrypt'])}
+async function decryptUrl(url){
+  if(cache.has(url))return cache.get(url);
+  const p=(async()=>{const kek=await mainKey();
+    const r=await fetch(url,{cache:'no-store'});if(!r.ok)throw new Error('fetch '+r.status);
+    const b=new Uint8Array(await r.arrayBuffer()),m=new TextDecoder().decode(b.subarray(0,MAGIC.length));if(m!==MAGIC)throw new Error('not an encrypted file');
+    const n=new DataView(b.buffer,b.byteOffset+MAGIC.length,4).getUint32(0),end=MAGIC.length+4+n,h=JSON.parse(new TextDecoder().decode(b.subarray(MAGIC.length+4,end)));
+    if(h.v!==1)throw new Error('unsupported version');
+    let fkRaw;try{fkRaw=await aes(kek,u(h.wi),u(h.wk))}catch(e){throw new NoKey('stale')}
+    const fk=await crypto.subtle.importKey('raw',fkRaw,'AES-GCM',false,['decrypt']);
+    const meta=JSON.parse(new TextDecoder().decode(await aes(fk,u(h.mi),u(h.m))));
+    const data=await aes(fk,u(h.i),b.subarray(end),b.subarray(0,end));
+    const blob=new Blob([data],{type:meta.mime||'application/octet-stream'});
+    return {url:URL.createObjectURL(blob),name:meta.name,mime:meta.mime,size:data.length,blob}})();
+  cache.set(url,p);p.catch(()=>cache.delete(url));return p}
+function msg(e){return e instanceof NoKey?(e.message==='stale'?'Unlock the dashboard first (saved key is out of date)':'Unlock the dashboard first'):'Could not open this file'}
+function download(f){const a=document.createElement('a');a.href=f.url;a.download=f.name||'file';a.rel='noopener';document.body.appendChild(a);a.click();a.remove()}
+async function openLink(el){
+  const src=el.getAttribute('data-enc-file'),wantDl=el.hasAttribute('data-enc-download');
+  if(!localStorage.getItem(K)){toast('Unlock the dashboard first');return}
+  // open the tab synchronously (popup blockers), fill it after decrypting
+  const hook=!wantDl&&typeof window.mwEncView==='function'?window.mwEncView:null;
+  let w=null;if(!wantDl&&!hook){w=window.open('','_blank');if(w){try{w.document.title='Opening…';w.document.body.textContent='Decrypting…'}catch(e){}}}
+  try{const f=await decryptUrl(src);
+    if(hook){let shown=false;if(INLINE.test(f.mime||'')){try{shown=hook({url:f.url,mime:f.mime},el)===true}catch(e){shown=false}}if(!shown)download(f)}
+    else if(!wantDl&&INLINE.test(f.mime||'')&&w){w.location.href=f.url}
+    else{if(w)w.close();download(f)}
+  }catch(e){if(w)w.close();console.warn('enc-file',src,e);toast(msg(e))}}
+async function loadImg(img){
+  if(img.__mwEnc)return;img.__mwEnc=1;const src=img.getAttribute('data-enc-img');
+  try{const f=await decryptUrl(src);img.src=f.url;img.dataset.encState='ok'}
+  catch(e){img.dataset.encState='error';if(!img.alt)img.alt=msg(e);img.title=msg(e);console.warn('enc-img',src,e)}}
+function scan(root){(root.querySelectorAll?root:document).querySelectorAll('img[data-enc-img]').forEach(loadImg)}
+// one shared handler reference so inlining twice (or a gate re-render) never double-opens
+window.__mwEncClick=window.__mwEncClick||(e=>{const el=e.target.closest&&e.target.closest('[data-enc-file]');if(!el)return;e.preventDefault();window.mwEncFile.open(el)});
+document.addEventListener('click',window.__mwEncClick,true);
+function init(){scan(document);new MutationObserver(ms=>{for(const m of ms){for(const n of m.addedNodes){if(n.nodeType!==1)continue;if(n.matches('img[data-enc-img]'))loadImg(n);else scan(n)}
+  if(m.type==='attributes'&&m.target.matches('img[data-enc-img]')){m.target.__mwEnc=0;loadImg(m.target)}}}).observe(document.documentElement,{childList:true,subtree:true,attributes:true,attributeFilter:['data-enc-img']})}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+window.mwEncFile={decrypt:decryptUrl,open:openLink,loadImg,scan};
+})();
+
+</script>
+<script src="https://webermanapps.github.io/style-swipe/kit/projects.js?v=op4" defer></script>
+</body></html>

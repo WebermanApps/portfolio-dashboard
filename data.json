@@ -1,5 +1,5 @@
 {
- "updated": "Oct 15, 2026, 3:34 PM ICT",
+ "updated": "Oct 17, 2026, 9:05 PM ICT",
  "status": "Active. Taxes are the top priority; CPA authorization forms signed; still waiting on the CPA.",
  "lanes": [
   {
@@ -359,6 +359,41 @@
    "est": false,
    "kind": "tax",
    "source": "../folio-property/wickfield/mortgage-profile.md"
+  }
+ ],
+ "todo": [
+  {
+   "t": "Sep and Oct 2026 statements for 11 accounts",
+   "s": "Waiting on Max",
+   "det": "Accounts: PNC Business, PNC Personal, SNB Personal Checking, Wise, Apple Card, Amex Business Platinum, Amex Delta Platinum, Cap One Venture X, Cap One Biz Venture X, Chase Prime, Venmo."
+  },
+  {
+   "t": "Insurance policies",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Current Roth and Kraken screenshots",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Confirm the 200-day watchlist",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Which card AI charges go on, and whether Ethan's ticket counts as an AI cost or as travel",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Questions for Sal (CPA)",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Lenny equity documents",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Mellow Wood tax and insurance bills",
+   "s": "Waiting on Max"
   }
  ]
 }
