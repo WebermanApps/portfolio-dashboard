@@ -1,5 +1,5 @@
 {
- "updated": "Oct 17, 2026, 9:05 PM ICT",
+ "updated": "Oct 17, 2026, 9:32 PM ICT",
  "status": "Active. Taxes are the top priority; CPA authorization forms signed; still waiting on the CPA.",
  "lanes": [
   {
@@ -55,20 +55,9 @@
    "s": "In Progress"
   },
   {
-   "t": "Insurance documents square-away",
-   "s": "In Progress"
-  },
-  {
    "t": "Identify incoming transfers",
    "s": "In Progress"
   }
- ],
- "decisions": [
-  "Cards: confirm the Amex Delta payment posted",
-  "Taxes: answer the open CPA questions",
-  "Rentals: answer the equity agreement questions",
-  "Upload fresh portfolio cost-basis exports",
-  "Portfolio: review the allocation suggestion"
  ],
  "recent": [
   "Oct 15 Morning Report (late) and close-of-night check: Ready To Swipe kit refresh, Routines updated",
@@ -368,7 +357,7 @@
    "det": "Accounts: PNC Business, PNC Personal, SNB Personal Checking, Wise, Apple Card, Amex Business Platinum, Amex Delta Platinum, Cap One Venture X, Cap One Biz Venture X, Chase Prime, Venmo."
   },
   {
-   "t": "Insurance policies",
+   "t": "Insurance policies and insurance documents square-away",
    "s": "Waiting on Max"
   },
   {
@@ -384,15 +373,27 @@
    "s": "Waiting on Max"
   },
   {
-   "t": "Questions for Sal (CPA)",
+   "t": "Answer the open questions for Sal (CPA)",
    "s": "Waiting on Max"
   },
   {
-   "t": "Lenny equity documents",
+   "t": "Lenny equity documents and the open equity agreement questions",
    "s": "Waiting on Max"
   },
   {
    "t": "Mellow Wood tax and insurance bills",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Confirm the Amex Delta payment posted",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Upload fresh portfolio cost-basis exports",
+   "s": "Waiting on Max"
+  },
+  {
+   "t": "Review the portfolio allocation suggestion",
    "s": "Waiting on Max"
   }
  ]

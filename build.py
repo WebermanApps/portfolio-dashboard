@@ -42,7 +42,7 @@ else:
 GREET='Good Morning, Max' if h<12 else ('Good Afternoon, Max' if h<17 else 'Good Evening, Max')
 row=lambda t,right,det:f'<li><details><summary><span>{t}</span><span class="dt">{right}</span></summary><div class="det">{det}</div></details></li>'
 opn=''.join(row(e(o["t"]),pill(o["s"]),f'Status: {e(o["s"])}. Owner: Portfolio.') for o in d['open'])
-dec=''.join(row(e(x),pill("Waiting on Max"),'Needs your answer; Portfolio follows up once you reply.') for x in d['decisions'])
+# R106 audit (Oct 17 2026): the Decisions Waiting On Max block was merged into the To-Do (data.json todo) and removed.
 rec=''.join(row(e(x),'Oct 13',e(x)) for x in d['recent'])
 # R106 (Max Oct 17 2026): To-Do List fold-down, closed by default, directly under the Morning Report. Names + statuses only (no figures).
 # Exactly one block carries data-mw-slot="todo"; the shared kit (mw-layout.js) moves it into the branded header. Source: data.json "todo".
@@ -89,7 +89,7 @@ _later=[x for x in BL if x['date']>f'{_ms[1][0]:04d}-{_ms[1][1]:02d}-31']
 _lt=(' <span class="blater">Later: '+' · '.join(f'{e(x["name"])} {datetime.date.fromisoformat(x["date"]).strftime("%b %-d")}' for x in _later)+'</span>') if _later else ''
 bills=f'<section id="bills" aria-label="Bills Calendar"><h2>Bills Calendar</h2><div class="blg"><span class="k-card bi">Card</span><span class="k-loan bi">Loan</span><span class="k-rent bi">Rent In</span><span class="k-ins bi">Insurance / Tax</span><span><i>Est.</i> = projected from last stated date</span></div><div class="bcal">{"".join(_bm(y,m) for y,m in _ms)}</div><ul class="blist">{_li}</ul><p class="bnote">Names and due dates only.{_lt}</p></section>'
 page=open('template.html').read()
-for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks,BILLS=bills,TODO=todo).items(): page=page.replace('{{'+k+'}}',v)
+for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,GREET=GREET,DECKS=decks,BILLS=bills,TODO=todo).items(): page=page.replace('{{'+k+'}}',v)
 # privacy guard: no money figures or account-like numbers
 if re.search(r'\$\s?\d|\d[\d,]*\.\d{2}\b|\b(?!20[0-9]{2}\b)\d{4,}\b|\d+(\.\d+)?\s?%|\d+k\b',re.sub(r'<[^>]+>','',re.sub(r'(?s)<(style|script|svg).*?</\1>','',page))):
     sys.exit('PRIVACY GUARD: possible figure found; not publishing')
@@ -105,6 +105,6 @@ json.dump({'type':_rtype,'posted_at':_now.strftime('%Y-%m-%dT%H:%M:%S+07:00'),'p
 
 if os.environ.get('PORTFOLIO_DASH_PREVIEW_PASSWORD'):  # local-only preview with live tiles
     live=True; lanes=''.join(tile(l) for l in d['lanes']); p=open('template.html').read()
-    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,DEC=dec,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,NDEC=str(len(d['decisions'])),GREET=GREET,DECKS=decks,BILLS=bills,TODO=todo).items(): p=p.replace('{{'+k+'}}',v)
+    for k,v in dict(REPORT=rep,STATUS=e(d['status']),UPDATED=e(d['updated']),LANES=lanes,OPEN=opn,REC=rec,ROU=rou,LNK=lnk,SHARE=ic('share'),BUILD=V,MYAPPS=myapps,GREET=GREET,DECKS=decks,BILLS=bills,TODO=todo).items(): p=p.replace('{{'+k+'}}',v)
     import shutil; open(subdash.PRIV+'/preview/index.html','w').write(p); shutil.copy('brand-tokens.css',subdash.PRIV+'/preview/')
 print('built',d['updated'],'| sub-dashboards:',state)
