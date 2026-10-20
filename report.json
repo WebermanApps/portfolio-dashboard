@@ -1,6 +1,7 @@
 {
  "type": "Morning Report",
- "posted_at": "2026-10-15T15:34:19+07:00",
- "posted_ict": "Oct 15, 2026, 3:34 PM ICT",
- "late": true
+ "posted_at": null,
+ "posted_ict": null,
+ "late": false,
+ "note": "No report. Morning reports now come from Grok Bot and Swatch."
 }

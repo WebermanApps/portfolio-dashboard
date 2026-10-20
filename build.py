@@ -38,7 +38,8 @@ if rt.startswith('Fresh Start'):
         if m: tl+=f'<a class="fst-tile mw-hover" href="{e(m[1])}">{ic(m[2])}<b>{e(m[0])}</b><span>Ready now</span></a>'
     rep=f'<details class="alerts report fs1"><summary><span class="eyebrow">{e(rt)}</span> <span class="tag g">{len(rdy)} Ready</span> <span class="tag w">{len(wt)} Waiting</span></summary><div class="ai"><div class="fst-tiles">{tl}</div><ul class="wl">'+''.join(f'<li>Waiting on you: {e(x)}</li>' for x in wt)+'</ul></div></details>'
 else:
-    rep=f'<section class="rep report" aria-label="{e(rt)}"><div class="eyebrow">{len(RI)} Updates</div><h3>{e(rt)}</h3><ol class="ev">'+''.join(f'<li>{e(x)}</li>' for x in RI)+'</ol></section>'
+    _items=''.join(f'<li>{e(x)}</li>' for x in RI) or '<li>No report. Morning reports now come from Grok Bot and Swatch.</li>'
+    rep=f'<section class="rep report" aria-label="{e(rt)}"><div class="eyebrow">{len(RI) or "No"} Updates</div><h3>{e(rt)}</h3><ol class="ev">'+_items+'</ol></section>'
 GREET='Good Morning, Max' if h<12 else ('Good Afternoon, Max' if h<17 else 'Good Evening, Max')
 row=lambda t,right,det:f'<li><details><summary><span>{t}</span><span class="dt">{right}</span></summary><div class="det">{det}</div></details></li>'
 opn=''.join(row(e(o["t"]),pill(o["s"]),f'Status: {e(o["s"])}. Owner: Portfolio.') for o in d['open'])
